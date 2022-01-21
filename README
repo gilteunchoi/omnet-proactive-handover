@@ -3,7 +3,6 @@
 *************************************************
 
 [VERSIONS]
-
 Ubuntu-16.04
 GCC-5.5.0
 omnetpp-5.4.1
@@ -13,7 +12,6 @@ inet-3.6.6
 sumo-1.0.1
 
 [INIT]
-
 $ python2 ./veins-veins-5.0/sumo-launchd.py
 $ omnetpp
 
@@ -37,6 +35,5 @@ $ ./sumo-1.0.1/tools/randomTrips.py –n {pathname}.net.xml –o {tripname}.rou.
 https://sumo.dlr.de/docs/Tools/Trip.html
 
 [For whom work after me]
-
 Good Luck and Enjoy.
 2022, Gilteun Choi
