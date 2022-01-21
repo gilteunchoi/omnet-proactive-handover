@@ -22,7 +22,6 @@ Run As OMNeT++ Simulation:
                              ...
                              
 [SUMO related Commands]
-
 A) if you want sumo GUI while in simulation:
 $ python2 ./veins-veins-5.0/sumo-launchd.py -vv -c {sumo-gui path}
 *{sumo-gui path}: install folder/sumo-1.0.1/bin/sumo-gui
