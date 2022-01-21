@@ -1,0 +1,306 @@
+version 2
+run D2DMulticast-0-20220114-14:32:39-20117
+attr configname D2DMulticast
+attr datetime 20220114-14:32:39
+attr experiment D2DMulticast
+attr inifile omnetpp.ini
+attr iterationvars "$cqi=7, $numUEs=10"
+attr iterationvarsf cqi=7,numUEs=10-
+attr measurement "$cqi=7, $numUEs=10"
+attr network lte.simulations.a_testworld_01.Highway
+attr processid 20117
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+itervar cqi 7
+itervar numUEs 10
+param *.eNodeB*.nicType "\"LteNicEnbD2D\""
+param *.car[*].nicType "\"LteNicUeD2D\""
+param **.amcMode "\"D2D\""
+param **.enableD2DCqiReporting false
+param **.usePreconfiguredTxParams true
+param **.d2dCqi 7
+param *.car[*].numUdpApps 1
+param *.car[0].udpApp[*].typename "\"AlertSender\""
+param *.car[0].udpApp[*].localPort 3088+ancestorIndex(0)
+param *.car[0].udpApp[*].startTime uniform(0s,0.02s)
+param *.car[0].udpApp[*].destAddress "\"224.0.0.10\""
+param *.car[0].udpApp[*].destPort 1000
+param *.car[1..9].udpApp[*].typename "\"AlertReceiver\""
+param *.car[1..9].udpApp[*].localPort 1000
+param *.car[*].configurator.mcastGroups "\"224.0.0.10\""
+param **.coreDebug false
+param **.routingRecorder.enabled false
+param *.playgroundSizeX 20000m
+param *.playgroundSizeY 20000m
+param *.playgroundSizeZ 10000m
+param *.veinsManager.moduleType "\"lte.corenetwork.nodes.cars.Car\""
+param *.veinsManager.moduleName "\"car\""
+param *.veinsManager.launchConfig "xmldoc(\"helloworld.launchd.xml\")"
+param *.veinsManager.updateInterval 0.1s
+param *.car[*].mobilityType "\"VeinsInetMobility\""
+param **.channelControl.pMax 10W
+param **.channelControl.alpha 1.0
+param **.channelControl.carrierFrequency 2100e+6Hz
+param *.car[*].lteNic.phy.dynamicCellAssociation true
+param **.car[*].masterId 1
+param **.car[*].macCellId 1
+param **.eNodeB1.macCellId 1
+param **.eNodeB1.macNodeId 1
+param **.eNodeB2.macCellId 2
+param **.eNodeB2.macNodeId 2
+param **.eNodeB3.macCellId 3
+param **.eNodeB3.macNodeId 3
+param **.eNodeB4.macCellId 4
+param **.eNodeB4.macNodeId 4
+param **.eNodeB5.macCellId 5
+param **.eNodeB5.macNodeId 5
+param **.eNodeB6.macCellId 6
+param **.eNodeB6.macNodeId 6
+param **.eNodeBCount 6
+param **.rbAllocationType "\"localized\""
+param **.feedbackType "\"ALLBANDS\""
+param **.feedbackGeneratorType "\"IDEAL\""
+param **.maxHarqRtx 3
+param **.numUe 10
+param **.cellInfo.ruRange 50
+param **.cellInfo.ruTxPower "\"50,50,50;\""
+param **.cellInfo.antennaCws "\"2;\""
+param **.cellInfo.numRbDl 25
+param **.cellInfo.numRbUl 25
+param **.numBands 25
+param **.fbDelay 1
+param *.car[*].lteNic.phy.enableHandover true
+param *.eNodeB*.lteNic.phy.enableHandover true
+param *.eNodeB*.lteNic.phy.broadcastMessageInterval 0.5s
+param *.eNodeB1.numX2Apps 1
+param *.eNodeB2.numX2Apps 2
+param *.eNodeB3.numX2Apps 2
+param *.eNodeB4.numX2Apps 2
+param *.eNodeB5.numX2Apps 2
+param *.eNodeB6.numX2Apps 1
+param *.eNodeB*.x2App[*].server.localPort "5000 + ancestorIndex(1)"
+param *.eNodeB1.x2App[0].client.connectAddress "\"eNodeB2%x2ppp0\""
+param *.eNodeB2.x2App[0].client.connectAddress "\"eNodeB1%x2ppp0\""
+param *.eNodeB2.x2App[1].client.connectAddress "\"eNodeB3%x2ppp0\""
+param *.eNodeB3.x2App[0].client.connectAddress "\"eNodeB2%x2ppp0\""
+param *.eNodeB3.x2App[1].client.connectAddress "\"eNodeB4%x2ppp0\""
+param *.eNodeB4.x2App[0].client.connectAddress "\"eNodeB3%x2ppp0\""
+param *.eNodeB4.x2App[1].client.connectAddress "\"eNodeB5%x2ppp0\""
+param *.eNodeB5.x2App[0].client.connectAddress "\"eNodeB4%x2ppp0\""
+param *.eNodeB5.x2App[1].client.connectAddress "\"eNodeB6%x2ppp0\""
+param *.eNodeB6.x2App[0].client.connectAddress "\"eNodeB5%x2ppp0\""
+param **.sctp.nagleEnabled false
+param **.sctp.enableHeartbeats false
+
+vector 0 Highway.server.ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Highway.server.ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 2 Highway.router.ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Highway.router.ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 4 Highway.router.ppp[1].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 5 Highway.router.ppp[1].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 6 Highway.pgw.ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 7 Highway.pgw.ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 8 Highway.pgw.ppp[1].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 9 Highway.pgw.ppp[1].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 10 Highway.pgw.ppp[2].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 11 Highway.pgw.ppp[2].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 12 Highway.pgw.ppp[3].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 13 Highway.pgw.ppp[3].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 14 Highway.pgw.ppp[4].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 15 Highway.pgw.ppp[4].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 16 Highway.pgw.ppp[5].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 17 Highway.pgw.ppp[5].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 18 Highway.pgw.pppInterface.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 19 Highway.pgw.pppInterface.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 20 Highway.eNodeB1.pppIf.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 21 Highway.eNodeB1.pppIf.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 22 Highway.eNodeB1.x2ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 23 Highway.eNodeB1.x2ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 24 Highway.eNodeB2.pppIf.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 25 Highway.eNodeB2.pppIf.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 26 Highway.eNodeB2.x2ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 27 Highway.eNodeB2.x2ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 28 Highway.eNodeB2.x2ppp[1].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 29 Highway.eNodeB2.x2ppp[1].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 30 Highway.eNodeB3.pppIf.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 31 Highway.eNodeB3.pppIf.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 32 Highway.eNodeB3.x2ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 33 Highway.eNodeB3.x2ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 34 Highway.eNodeB3.x2ppp[1].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 35 Highway.eNodeB3.x2ppp[1].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 36 Highway.eNodeB4.pppIf.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 37 Highway.eNodeB4.pppIf.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 38 Highway.eNodeB4.x2ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 39 Highway.eNodeB4.x2ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 40 Highway.eNodeB4.x2ppp[1].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 41 Highway.eNodeB4.x2ppp[1].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 42 Highway.eNodeB5.pppIf.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 43 Highway.eNodeB5.pppIf.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 44 Highway.eNodeB5.x2ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 45 Highway.eNodeB5.x2ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 46 Highway.eNodeB5.x2ppp[1].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 47 Highway.eNodeB5.x2ppp[1].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 48 Highway.eNodeB6.pppIf.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 49 Highway.eNodeB6.pppIf.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 50 Highway.eNodeB6.x2ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 51 Highway.eNodeB6.x2ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+0	0	0	0
+1	0	0	0
+2	0	0	0
+3	0	0	0
+4	0	0	0
+5	0	0	0
+6	0	0	0
+7	0	0	0
+8	0	0	0
+9	0	0	0
+10	0	0	0
+11	0	0	0
+12	0	0	0
+13	0	0	0
+14	0	0	0
+15	0	0	0
+16	0	0	0
+17	0	0	0
+18	0	0	0
+19	0	0	0
+20	0	0	0
+21	0	0	0
+22	0	0	0
+23	0	0	0
+24	0	0	0
+25	0	0	0
+26	0	0	0
+27	0	0	0
+28	0	0	0
+29	0	0	0
+30	0	0	0
+31	0	0	0
+32	0	0	0
+33	0	0	0
+34	0	0	0
+35	0	0	0
+36	0	0	0
+37	0	0	0
+38	0	0	0
+39	0	0	0
+40	0	0	0
+41	0	0	0
+42	0	0	0
+43	0	0	0
+44	0	0	0
+45	0	0	0
+46	0	0	0
+47	0	0	0
+48	0	0	0
+49	0	0	0
+50	0	0	0
+51	0	0	0
+

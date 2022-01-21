@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+#include <omnetpp.h>
+
+using namespace std;
+class recordv{
+public:
+    int a;
+    void saveData();
+
+    protected:
+        int test();
+//        virtual void initialize();
+//        virtual void handleMessage(cMessage *msg);
+};
+
+//Define_Moudle(recordf);
+
+void recordf::saveData(){
+    cout<< "saveData!!" << endl;
+}
+
+//void recordf::initialize(){
+//    mobilityType = getParentModule()->par("mobilityType");
+//    sprintf("MT: %s", mobilityType);
+//}
+//
+//void recordf::handleMessage(cMessage *msg){
+//
+//}

@@ -1,0 +1,15 @@
+#This is a generated file; do not edit.
+#Tue Jan 04 17:11:05 KST 2022
+org.eclipse.ui.intro.universal=org.eclipse.ui.intro.universal\n3.3.100.v20170515-1335
+org.eclipse.cdt=org.eclipse.cdt\n9.4.3.201802261533
+org.eclipse.platform=org.eclipse.platform\n4.7.3.v20180330-0640
+org.eclipse.platform.doc.user=org.eclipse.platform.doc.user\n4.7.3.v20180328-1557
+org.eclipse.ui.cheatsheets=org.eclipse.ui.cheatsheets\n3.5.100.v20170515-0748
+org.omnetpp.doc=org.omnetpp.doc\n5.4.1.180629-5e28390
+org.eclipse.cdt.doc.user=org.eclipse.cdt.doc.user\n5.4.0.201802261533
+org.eclipse.egit.doc=org.eclipse.egit.doc\n4.9.2.201712150930-r
+org.eclipse.help=org.eclipse.help\n3.8.1.v20170815-1448
+org.eclipse.help.base=org.eclipse.help.base\n4.2.153.v20180330-0640
+org.eclipse.ui.intro=org.eclipse.ui.intro\n3.5.100.v20170418-0710
+org.eclipse.linuxtools.profiling.docs=org.eclipse.linuxtools.profiling.docs\n1.0.0.201803061555
+org.eclipse.linuxtools.valgrind.doc=org.eclipse.linuxtools.valgrind.doc\n1.0.0.201803061555

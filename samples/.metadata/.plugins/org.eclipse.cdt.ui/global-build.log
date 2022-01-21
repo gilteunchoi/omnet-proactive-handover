@@ -1,0 +1,1014 @@
+15:38:25 **** Incremental Build of configuration gcc-debug for project inet ****
+make MODE=debug -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -g -Wall -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_debug.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-debug/src/libINET_dbg.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir_dbg -loppsim_dbg -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+15:38:27 **** Incremental Build of configuration gcc-debug for project veins ****
+make MODE=debug all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+15:38:28 **** Incremental Build of configuration gcc-debug for project veins_inet3 ****
+make MODE=debug all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+15:38:28 **** Incremental Build of configuration gcc-debug for project lte ****
+make MODE=debug -j4 all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+stack/phy/layer/LtePhyBase.cc
+stack/phy/layer/LtePhyUe.cc
+Creating shared library: ../out/gcc-debug/src/liblte_dbg.so
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+15:38:44 **** Incremental Build of configuration gcc-debug for project inet ****
+make MODE=debug -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -g -Wall -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_debug.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-debug/src/libINET_dbg.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir_dbg -loppsim_dbg -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+15:38:45 **** Incremental Build of configuration gcc-debug for project veins ****
+make MODE=debug all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+15:38:46 **** Incremental Build of configuration gcc-debug for project veins_inet3 ****
+make MODE=debug all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+15:38:47 **** Incremental Build of configuration gcc-debug for project lte ****
+make MODE=debug -j4 all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+16:03:20 **** Incremental Build of configuration gcc-release for project inet ****
+make MODE=release -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -O3 -DNDEBUG=1 -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_release.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+16:03:21 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+16:03:22 **** Incremental Build of configuration gcc-release for project veins_inet3 ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+16:03:23 **** Incremental Build of configuration gcc-release for project lte ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+16:07:51 **** Incremental Build of configuration gcc-release for project inet ****
+make MODE=release -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -O3 -DNDEBUG=1 -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_release.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+16:07:53 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+16:07:54 **** Incremental Build of configuration gcc-release for project veins_inet3 ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+16:07:55 **** Incremental Build of configuration gcc-release for project lte ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+16:07:57 **** Incremental Build of configuration gcc-release for project inet ****
+make MODE=release -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -O3 -DNDEBUG=1 -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_release.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+16:07:59 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+16:08:00 **** Incremental Build of configuration gcc-release for project veins_inet3 ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+16:08:01 **** Incremental Build of configuration gcc-release for project lte ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+16:08:03 **** Incremental Build of configuration gcc-release for project inet ****
+make MODE=release -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -O3 -DNDEBUG=1 -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_release.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+16:08:05 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+16:08:06 **** Incremental Build of configuration gcc-release for project veins_inet3 ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+16:08:07 **** Incremental Build of configuration gcc-release for project lte ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+16:09:03 **** Incremental Build of configuration gcc-release for project inet ****
+make MODE=release -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -O3 -DNDEBUG=1 -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_release.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+16:09:05 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+16:09:06 **** Incremental Build of configuration gcc-release for project veins_inet3 ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+16:09:07 **** Incremental Build of configuration gcc-release for project lte ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+16:26:23 **** Incremental Build of configuration gcc-release for project inet ****
+make MODE=release -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -O3 -DNDEBUG=1 -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_release.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+16:26:25 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+16:26:26 **** Incremental Build of configuration gcc-release for project veins_inet3 ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+16:26:27 **** Incremental Build of configuration gcc-release for project lte ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+stack/phy/layer/LtePhyUe.cc
+Creating shared library: ../out/gcc-release/src/liblte.so
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+16:31:24 **** Incremental Build of configuration gcc-release for project inet ****
+make MODE=release -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -O3 -DNDEBUG=1 -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_release.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+16:31:26 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+16:31:27 **** Incremental Build of configuration gcc-release for project veins_inet3 ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+16:31:28 **** Incremental Build of configuration gcc-release for project lte ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+stack/phy/layer/LtePhyUe.cc
+stack/phy/layer/LtePhyUe.cc: In member function ‘void LtePhyUe::handoverHandler(LteAirFrame*, UserControlInfo*)’:
+stack/phy/layer/LtePhyUe.cc:194:31: error: ‘ios’ has not been declared
+     rawRSSI.open(rawFileName, ios::app);
+                               ^
+make[1]: *** [../out/gcc-release/src/stack/phy/layer/LtePhyUe.o] Error 1
+Makefile:290: recipe for target '../out/gcc-release/src/stack/phy/layer/LtePhyUe.o' failed
+make: *** [all] Error 2
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+Makefile:2: recipe for target 'all' failed
+16:31:37 **** Incremental Build of configuration gcc-release for project inet ****
+make MODE=release -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -O3 -DNDEBUG=1 -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_release.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+16:31:39 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+16:31:40 **** Incremental Build of configuration gcc-release for project veins_inet3 ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+16:31:41 **** Incremental Build of configuration gcc-release for project lte ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+stack/phy/layer/LtePhyUe.cc
+Creating shared library: ../out/gcc-release/src/liblte.so
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+16:32:45 **** Incremental Build of configuration gcc-release for project inet ****
+make MODE=release -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -O3 -DNDEBUG=1 -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_release.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+16:32:46 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+16:32:47 **** Incremental Build of configuration gcc-release for project veins_inet3 ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+16:32:48 **** Incremental Build of configuration gcc-release for project lte ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+stack/phy/layer/LtePhyUe.cc
+Creating shared library: ../out/gcc-release/src/liblte.so
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+16:33:51 **** Incremental Build of configuration gcc-release for project inet ****
+make MODE=release -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -O3 -DNDEBUG=1 -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_release.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+16:33:53 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+16:33:54 **** Incremental Build of configuration gcc-release for project veins_inet3 ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+16:33:55 **** Incremental Build of configuration gcc-release for project lte ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+16:41:00 **** Incremental Build of configuration gcc-release for project inet ****
+make MODE=release -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -O3 -DNDEBUG=1 -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_release.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+16:41:02 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+16:41:03 **** Incremental Build of configuration gcc-release for project veins_inet3 ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+16:41:04 **** Incremental Build of configuration gcc-release for project lte ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+stack/phy/layer/LtePhyUe.cc
+Creating shared library: ../out/gcc-release/src/liblte.so
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+16:41:09 **** Incremental Build of configuration gcc-release for project inet ****
+make MODE=release -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -O3 -DNDEBUG=1 -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_release.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+16:41:12 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+16:41:13 **** Incremental Build of configuration gcc-release for project veins_inet3 ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+16:41:14 **** Incremental Build of configuration gcc-release for project lte ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+16:50:54 **** Incremental Build of configuration gcc-release for project inet ****
+make MODE=release -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -O3 -DNDEBUG=1 -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_release.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+16:50:56 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+16:50:57 **** Incremental Build of configuration gcc-release for project veins_inet3 ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+16:50:58 **** Incremental Build of configuration gcc-release for project lte ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+stack/phy/layer/LtePhyUe.cc
+Creating shared library: ../out/gcc-release/src/liblte.so
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+11:28:39 **** Incremental Build of configuration gcc-release for project inet ****
+make MODE=release -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -O3 -DNDEBUG=1 -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_release.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+11:28:40 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+11:28:41 **** Incremental Build of configuration gcc-release for project veins_inet3 ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+11:28:42 **** Incremental Build of configuration gcc-release for project lte ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+stack/phy/layer/LtePhyUe.cc
+stack/phy/layer/LtePhyUe.cc: In member function ‘void LtePhyUe::handoverHandler(LteAirFrame*, UserControlInfo*)’:
+stack/phy/layer/LtePhyUe.cc:237:21: error: ‘class UserControlInfo’ has no member named ‘getSourceID’
+         if(lteInfo->getSourceID() == 1){
+                     ^
+stack/phy/layer/LtePhyUe.cc:239:27: error: ‘class UserControlInfo’ has no member named ‘getSourceID’
+         }else if(lteInfo->getSourceID() == 10){
+                           ^
+Makefile:290: recipe for target '../out/gcc-release/src/stack/phy/layer/LtePhyUe.o' failed
+make[1]: *** [../out/gcc-release/src/stack/phy/layer/LtePhyUe.o] Error 1
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+Makefile:2: recipe for target 'all' failed
+make: *** [all] Error 2
+11:29:44 **** Incremental Build of configuration gcc-release for project inet ****
+make MODE=release -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -O3 -DNDEBUG=1 -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_release.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+11:29:46 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+11:29:46 **** Incremental Build of configuration gcc-release for project veins_inet3 ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+11:29:47 **** Incremental Build of configuration gcc-release for project lte ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+stack/phy/layer/LtePhyUe.cc
+Creating shared library: ../out/gcc-release/src/liblte.so
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+11:35:55 **** Incremental Build of configuration gcc-release for project inet ****
+make MODE=release -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -O3 -DNDEBUG=1 -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_release.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+11:35:56 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+11:35:57 **** Incremental Build of configuration gcc-release for project veins_inet3 ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+11:35:58 **** Incremental Build of configuration gcc-release for project lte ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+stack/phy/layer/LtePhyUe.cc
+stack/phy/layer/LtePhyUe.cc: In member function ‘virtual void LtePhyUe::triggerHandover()’:
+stack/phy/layer/LtePhyUe.cc:309:5: error: ‘rawHOT’ was not declared in this scope
+     rawHOT.open(rawFileName, std::ios::app);
+     ^
+make[1]: *** [../out/gcc-release/src/stack/phy/layer/LtePhyUe.o] Error 1
+Makefile:290: recipe for target '../out/gcc-release/src/stack/phy/layer/LtePhyUe.o' failed
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+make: *** [all] Error 2
+Makefile:2: recipe for target 'all' failed
+11:36:21 **** Incremental Build of configuration gcc-release for project inet ****
+make MODE=release -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -O3 -DNDEBUG=1 -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_release.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+11:36:23 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+11:36:24 **** Incremental Build of configuration gcc-release for project veins_inet3 ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+11:36:25 **** Incremental Build of configuration gcc-release for project lte ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+stack/phy/layer/LtePhyUe.cc
+stack/phy/layer/LtePhyUe.cc: In member function ‘virtual void LtePhyUe::triggerHandover()’:
+stack/phy/layer/LtePhyUe.cc:311:8: error: ‘rawRSSI’ was not declared in this scope
+     if(rawRSSI.is_open()){
+        ^
+stack/phy/layer/LtePhyUe.cc:314:5: error: ‘rawRSSI’ was not declared in this scope
+     rawRSSI.close();
+     ^
+make[1]: *** [../out/gcc-release/src/stack/phy/layer/LtePhyUe.o] Error 1
+Makefile:290: recipe for target '../out/gcc-release/src/stack/phy/layer/LtePhyUe.o' failed
+make: *** [all] Error 2
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+Makefile:2: recipe for target 'all' failed
+11:36:51 **** Incremental Build of configuration gcc-release for project inet ****
+make MODE=release -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -O3 -DNDEBUG=1 -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_release.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+11:36:52 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+11:36:53 **** Incremental Build of configuration gcc-release for project veins_inet3 ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+11:36:54 **** Incremental Build of configuration gcc-release for project lte ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+stack/phy/layer/LtePhyUe.cc
+Creating shared library: ../out/gcc-release/src/liblte.so
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+11:52:12 **** Incremental Build of configuration gcc-release for project inet ****
+make MODE=release -j4 all 
+cd src && make
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.wireless' in feature 'wirelesstutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.visualization' in feature 'visualizationtutorial' was not found.
+opp_featuretool: Error: NED package 'inet.tutorials.configurator' in feature 'configuratortutorial' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.visualizer' in feature 'visualizershowcases' was not found.
+opp_featuretool: Error: NED package 'inet.showcases.wireless' in feature 'wirelessshowcases' was not found.
+*** COMPILING with:
+g++ -c -std=c++11 -O3 -DNDEBUG=1 -MMD -MP -MF .d  -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT -DWITH_MPI -DXMLPARSER=libxml -DPREFER_QTENV -DWITH_QTENV -DWITH_PARSIM -DWITH_NETBUILDER -Wno-overloaded-virtual -include inet/common/precompiled_release.h  -DINET_EXPORT -I. -I/home/gilteun/omnetpp-5.4.1/include
+*** LINKING with:
+g++ -shared -fPIC -o ../out/gcc-release/src/libINET.so -Wl,--no-as-needed -Wl,--whole-archive  -Wl,--no-whole-archive -loppenvir -loppsim -ldl -lstdc++  -Wl,-rpath,/home/gilteun/omnetpp-5.4.1/lib -Wl,-rpath,/lib -Wl,-rpath,.  -L/home/gilteun/omnetpp-5.4.1/lib
+Building...
+make[1]: Nothing to be done for 'all-pch'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
+11:52:14 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+11:52:14 **** Incremental Build of configuration gcc-release for project veins_inet3 ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet3/src'
+11:52:15 **** Incremental Build of configuration gcc-release for project lte ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
+stack/phy/layer/LtePhyUe.cc
+Creating shared library: ../out/gcc-release/src/liblte.so
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'

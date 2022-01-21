@@ -1,0 +1,866 @@
+                                                                
+version 2
+run D2DMulticast-0-20220112-13:35:54-3833
+attr configname D2DMulticast
+attr datetime 20220112-13:35:54
+attr experiment D2DMulticast
+attr inifile omnetpp.ini
+attr iterationvars "$cqi=7, $numUEs=10"
+attr iterationvarsf cqi=7,numUEs=10-
+attr measurement "$cqi=7, $numUEs=10"
+attr network lte.simulations.a_testworld_01.Highway
+attr processid 3833
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+itervar cqi 7
+itervar numUEs 10
+param *.eNodeB*.nicType "\"LteNicEnbD2D\""
+param *.car[*].nicType "\"LteNicUeD2D\""
+param **.amcMode "\"D2D\""
+param **.enableD2DCqiReporting false
+param **.usePreconfiguredTxParams true
+param **.d2dCqi 7
+param *.car[*].numUdpApps 1
+param *.car[0].udpApp[*].typename "\"AlertSender\""
+param *.car[0].udpApp[*].localPort 3088+ancestorIndex(0)
+param *.car[0].udpApp[*].startTime uniform(0s,0.02s)
+param *.car[0].udpApp[*].destAddress "\"224.0.0.10\""
+param *.car[0].udpApp[*].destPort 1000
+param *.car[1..9].udpApp[*].typename "\"AlertReceiver\""
+param *.car[1..9].udpApp[*].localPort 1000
+param *.car[*].configurator.mcastGroups "\"224.0.0.10\""
+param **.coreDebug false
+param **.routingRecorder.enabled false
+param *.playgroundSizeX 20000m
+param *.playgroundSizeY 20000m
+param *.playgroundSizeZ 50m
+param *.veinsManager.moduleType "\"lte.corenetwork.nodes.cars.Car\""
+param *.veinsManager.moduleName "\"car\""
+param *.veinsManager.launchConfig "xmldoc(\"helloworld.launchd.xml\")"
+param *.veinsManager.updateInterval 0.1s
+param *.car[*].mobilityType "\"VeinsInetMobility\""
+param **.channelControl.pMax 10W
+param **.channelControl.alpha 1.0
+param **.channelControl.carrierFrequency 2100e+6Hz
+param *.car[*].lteNic.phy.dynamicCellAssociation true
+param **.car[*].masterId 1
+param **.car[*].macCellId 1
+param **.eNodeB1.macCellId 1
+param **.eNodeB1.macNodeId 1
+param **.eNodeB2.macCellId 2
+param **.eNodeB2.macNodeId 2
+param **.eNodeB3.macCellId 3
+param **.eNodeB3.macNodeId 3
+param **.eNodeB4.macCellId 4
+param **.eNodeB4.macNodeId 4
+param **.eNodeB5.macCellId 5
+param **.eNodeB5.macNodeId 5
+param **.eNodeB6.macCellId 6
+param **.eNodeB6.macNodeId 6
+param **.eNodeBCount 6
+param **.rbAllocationType "\"localized\""
+param **.feedbackType "\"ALLBANDS\""
+param **.feedbackGeneratorType "\"IDEAL\""
+param **.maxHarqRtx 3
+param **.numUe 10
+param **.cellInfo.ruRange 50
+param **.cellInfo.ruTxPower "\"50,50,50;\""
+param **.cellInfo.antennaCws "\"2;\""
+param **.cellInfo.numRbDl 25
+param **.cellInfo.numRbUl 25
+param **.numBands 25
+param **.fbDelay 1
+param *.car[*].lteNic.phy.enableHandover true
+param *.eNodeB*.lteNic.phy.enableHandover true
+param *.eNodeB*.lteNic.phy.broadcastMessageInterval 0.5s
+param *.eNodeB1.numX2Apps 1
+param *.eNodeB2.numX2Apps 2
+param *.eNodeB3.numX2Apps 2
+param *.eNodeB4.numX2Apps 2
+param *.eNodeB5.numX2Apps 2
+param *.eNodeB6.numX2Apps 1
+param *.eNodeB*.x2App[*].server.localPort "5000 + ancestorIndex(1)"
+param *.eNodeB1.x2App[0].client.connectAddress "\"eNodeB2%x2ppp0\""
+param *.eNodeB2.x2App[0].client.connectAddress "\"eNodeB1%x2ppp0\""
+param *.eNodeB2.x2App[1].client.connectAddress "\"eNodeB3%x2ppp0\""
+param *.eNodeB3.x2App[0].client.connectAddress "\"eNodeB2%x2ppp0\""
+param *.eNodeB3.x2App[1].client.connectAddress "\"eNodeB4%x2ppp0\""
+param *.eNodeB4.x2App[0].client.connectAddress "\"eNodeB3%x2ppp0\""
+param *.eNodeB4.x2App[1].client.connectAddress "\"eNodeB5%x2ppp0\""
+param *.eNodeB5.x2App[0].client.connectAddress "\"eNodeB4%x2ppp0\""
+param *.eNodeB5.x2App[1].client.connectAddress "\"eNodeB6%x2ppp0\""
+param *.eNodeB6.x2App[0].client.connectAddress "\"eNodeB5%x2ppp0\""
+param **.sctp.nagleEnabled false
+param **.sctp.enableHeartbeats false
+
+vector 0 Highway.server.ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Highway.server.ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 2 Highway.router.ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Highway.router.ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 4 Highway.router.ppp[1].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 5 Highway.router.ppp[1].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 6 Highway.pgw.ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 7 Highway.pgw.ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 8 Highway.pgw.ppp[1].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 9 Highway.pgw.ppp[1].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 10 Highway.pgw.ppp[2].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 11 Highway.pgw.ppp[2].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 12 Highway.pgw.ppp[3].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 13 Highway.pgw.ppp[3].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 14 Highway.pgw.ppp[4].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 15 Highway.pgw.ppp[4].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 16 Highway.pgw.ppp[5].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 17 Highway.pgw.ppp[5].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 18 Highway.pgw.pppInterface.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 19 Highway.pgw.pppInterface.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 20 Highway.eNodeB1.pppIf.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 21 Highway.eNodeB1.pppIf.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 22 Highway.eNodeB1.x2ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 23 Highway.eNodeB1.x2ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 24 Highway.eNodeB2.pppIf.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 25 Highway.eNodeB2.pppIf.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 26 Highway.eNodeB2.x2ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 27 Highway.eNodeB2.x2ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 28 Highway.eNodeB2.x2ppp[1].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 29 Highway.eNodeB2.x2ppp[1].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 30 Highway.eNodeB3.pppIf.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 31 Highway.eNodeB3.pppIf.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 32 Highway.eNodeB3.x2ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 33 Highway.eNodeB3.x2ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 34 Highway.eNodeB3.x2ppp[1].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 35 Highway.eNodeB3.x2ppp[1].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 36 Highway.eNodeB4.pppIf.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 37 Highway.eNodeB4.pppIf.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 38 Highway.eNodeB4.x2ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 39 Highway.eNodeB4.x2ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 40 Highway.eNodeB4.x2ppp[1].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 41 Highway.eNodeB4.x2ppp[1].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 42 Highway.eNodeB5.pppIf.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 43 Highway.eNodeB5.pppIf.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 44 Highway.eNodeB5.x2ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 45 Highway.eNodeB5.x2ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 46 Highway.eNodeB5.x2ppp[1].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 47 Highway.eNodeB5.x2ppp[1].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 48 Highway.eNodeB6.pppIf.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 49 Highway.eNodeB6.pppIf.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 50 Highway.eNodeB6.x2ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 51 Highway.eNodeB6.x2ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 52 Highway.eNodeB1.x2ppp[0].queue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 53 Highway.eNodeB1.x2ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 54 Highway.eNodeB2.x2ppp[0].queue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 55 Highway.eNodeB2.x2ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 56 Highway.eNodeB2.x2ppp[1].queue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 57 Highway.eNodeB2.x2ppp[1].queue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 58 Highway.eNodeB3.x2ppp[0].queue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 59 Highway.eNodeB3.x2ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 60 Highway.eNodeB3.x2ppp[1].queue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 61 Highway.eNodeB3.x2ppp[1].queue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 62 Highway.eNodeB4.x2ppp[0].queue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 63 Highway.eNodeB4.x2ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 64 Highway.eNodeB4.x2ppp[1].queue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 65 Highway.eNodeB4.x2ppp[1].queue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 66 Highway.eNodeB5.x2ppp[0].queue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 67 Highway.eNodeB5.x2ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 68 Highway.eNodeB5.x2ppp[1].queue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 69 Highway.eNodeB5.x2ppp[1].queue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 70 Highway.eNodeB6.x2ppp[0].queue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 71 Highway.eNodeB6.x2ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 72 Highway.eNodeB1.x2ppp[0].ppp rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 73 Highway.eNodeB1.x2ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 74 Highway.eNodeB2.x2ppp[0].ppp rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 75 Highway.eNodeB2.x2ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 76 Highway.eNodeB2.x2ppp[1].ppp rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 77 Highway.eNodeB2.x2ppp[1].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 78 Highway.eNodeB3.x2ppp[0].ppp rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 79 Highway.eNodeB3.x2ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 80 Highway.eNodeB3.x2ppp[1].ppp rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 81 Highway.eNodeB3.x2ppp[1].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 82 Highway.eNodeB4.x2ppp[0].ppp rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 83 Highway.eNodeB4.x2ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 84 Highway.eNodeB4.x2ppp[1].ppp rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 85 Highway.eNodeB4.x2ppp[1].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 86 Highway.eNodeB5.x2ppp[0].ppp rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 87 Highway.eNodeB5.x2ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 88 Highway.eNodeB5.x2ppp[1].ppp rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 89 Highway.eNodeB5.x2ppp[1].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 90 Highway.eNodeB6.x2ppp[0].ppp rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 91 Highway.eNodeB6.x2ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 92 Highway.eNodeB2.x2ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 93 Highway.eNodeB2.x2ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 94 Highway.eNodeB5.x2ppp[1].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 95 Highway.eNodeB5.x2ppp[1].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 96 Highway.eNodeB1.x2ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 97 Highway.eNodeB1.x2ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 98 Highway.eNodeB3.x2ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 99 Highway.eNodeB3.x2ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 100 Highway.eNodeB2.x2ppp[1].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 101 Highway.eNodeB2.x2ppp[1].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 102 Highway.eNodeB4.x2ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 103 Highway.eNodeB4.x2ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 104 Highway.eNodeB3.x2ppp[1].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 105 Highway.eNodeB3.x2ppp[1].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 106 Highway.eNodeB5.x2ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 107 Highway.eNodeB5.x2ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 108 Highway.eNodeB4.x2ppp[1].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 109 Highway.eNodeB4.x2ppp[1].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 110 Highway.eNodeB6.x2ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 111 Highway.eNodeB6.x2ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 112 Highway.eNodeB1.lteNic.mac avgServedBlocksUl:vector ETV
+attr source avgServedBlocksUl
+attr title "LTE Avg Served Blocks Ul, vector"
+attr unit blocks
+vector 113 Highway.eNodeB1.lteNic.mac avgServedBlocksDl:vector ETV
+attr source avgServedBlocksDl
+attr title "LTE Avg Served Blocks Dl, vector"
+attr unit blocks
+vector 114 Highway.eNodeB2.lteNic.mac avgServedBlocksUl:vector ETV
+attr source avgServedBlocksUl
+attr title "LTE Avg Served Blocks Ul, vector"
+attr unit blocks
+vector 115 Highway.eNodeB2.lteNic.mac avgServedBlocksDl:vector ETV
+attr source avgServedBlocksDl
+attr title "LTE Avg Served Blocks Dl, vector"
+attr unit blocks
+vector 116 Highway.eNodeB3.lteNic.mac avgServedBlocksUl:vector ETV
+attr source avgServedBlocksUl
+attr title "LTE Avg Served Blocks Ul, vector"
+attr unit blocks
+vector 117 Highway.eNodeB3.lteNic.mac avgServedBlocksDl:vector ETV
+attr source avgServedBlocksDl
+attr title "LTE Avg Served Blocks Dl, vector"
+attr unit blocks
+vector 118 Highway.eNodeB4.lteNic.mac avgServedBlocksUl:vector ETV
+attr source avgServedBlocksUl
+attr title "LTE Avg Served Blocks Ul, vector"
+attr unit blocks
+vector 119 Highway.eNodeB4.lteNic.mac avgServedBlocksDl:vector ETV
+attr source avgServedBlocksDl
+attr title "LTE Avg Served Blocks Dl, vector"
+attr unit blocks
+vector 120 Highway.eNodeB5.lteNic.mac avgServedBlocksUl:vector ETV
+attr source avgServedBlocksUl
+attr title "LTE Avg Served Blocks Ul, vector"
+attr unit blocks
+vector 121 Highway.eNodeB5.lteNic.mac avgServedBlocksDl:vector ETV
+attr source avgServedBlocksDl
+attr title "LTE Avg Served Blocks Dl, vector"
+attr unit blocks
+vector 122 Highway.eNodeB6.lteNic.mac avgServedBlocksUl:vector ETV
+attr source avgServedBlocksUl
+attr title "LTE Avg Served Blocks Ul, vector"
+attr unit blocks
+vector 123 Highway.eNodeB6.lteNic.mac avgServedBlocksDl:vector ETV
+attr source avgServedBlocksDl
+attr title "LTE Avg Served Blocks Dl, vector"
+attr unit blocks
+vector 124 Highway.car[0].lteNic.phy servingCell:vector ETV
+attr source servingCell
+attr title "ID of the serving eNodeB for the UE, vector"
+attr unit ""
+vector 125 Highway.eNodeB6.lteNic.mac receivedPacketFromLowerLayer:vector(packetBytes) ETV
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+vector 126 Highway.car[0].udpApp[0] alertSentMsg:vector ETV
+attr source alertSentMsg
+attr title "Alert messages sent, vector"
+attr unit ""
+vector 127 Highway.car[0].udp sentPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, vector(packetBytes)"
+vector 128 Highway.car[0].lteNic.pdcpRrc receivedPacketFromUpperLayer:vector(packetBytes) ETV
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+vector 129 Highway.car[0].lteNic.pdcpRrc sentPacketToLowerLayer:vector(packetBytes) ETV
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+vector 130 Highway.car[0].lteNic.rlc.um receivedPacketFromUpperLayer:vector(packetBytes) ETV
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+vector 131 Highway.car[0].lteNic.mac receivedPacketFromUpperLayer:vector(packetBytes) ETV
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+vector 132 Highway.car[0].lteNic.mac sentPacketToLowerLayer:vector(packetBytes) ETV
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+vector 133 Highway.eNodeB6.lteNic.mac sentPacketToLowerLayer:vector(packetBytes) ETV
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+vector 134 Highway.car[0].lteNic.mac receivedPacketFromLowerLayer:vector(packetBytes) ETV
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+vector 135 Highway.car[0].lteNic.phy averageCqiUl:vector ETV
+attr source averageCqiUl
+attr title "Average Cqi reported in UL, vector"
+attr unit cqi
+vector 136 Highway.eNodeB6.lteNic.channelModel rcvdSinr:vector ETV
+attr source rcvdSinr
+attr title "SINR measured at packet reception, vector"
+attr unit dB
+vector 137 Highway.car[0].lteNic.mac macDelayUl:vector ETV
+attr source macDelayUl
+attr title "Delay at the MAC layer UL, vector"
+attr unit s
+vector 138 Highway.eNodeB6.lteNic.mac measuredItbs:vector ETV
+attr source measuredItbs
+attr title "TBS index, vector"
+attr unit ""
+vector 139 Highway.car[0].lteNic.mac harqErrorRate_1st_Ul:vector ETV
+attr source harqErrorRate_1st_Ul
+attr title "Harq Error Rate Ul, vector"
+attr unit ""
+vector 140 Highway.car[0].lteNic.mac harqErrorRateUl:vector ETV
+attr source harqErrorRateUl
+attr title "Harq Error Rate Ul, vector"
+attr unit ""
+vector 141 Highway.car[0].lteNic.mac sentPacketToUpperLayer:vector(packetBytes) ETV
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+vector 142 Highway.car[0].lteNic.rlc.um sentPacketToLowerLayer:vector(packetBytes) ETV
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+vector 143 Highway.car[0].lteNic.phy averageCqiD2D:vector ETV
+attr source averageCqiD2D
+attr title "Average Cqi reported in D2D, vector"
+attr unit cqi
+vector 144 Highway.car[0].lteNic.mac harqErrorRate_2nd_Ul:vector ETV
+attr source harqErrorRate_2nd_Ul
+attr title "Harq Error Rate Ul, vector"
+attr unit ""
+112	25647 634609 458 512351 0.001 32.768 32768 0 0 0 0
+113	660256 634609 458 512351 0.001 32.768 32768 0 0 0 0
+114	1294865 634610 459 512352 0.001 32.768 32768 0 0 0 0
+115	1929475 634610 459 512352 0.001 32.768 32768 0 0 0 0
+116	2564085 634611 460 512353 0.001 32.768 32768 0 0 0 0
+117	3198696 634611 460 512353 0.001 32.768 32768 0 0 0 0
+118	3833307 634612 461 512354 0.001 32.768 32768 0 0 0 0
+119	4467919 634612 461 512354 0.001 32.768 32768 0 0 0 0
+120	5102531 634612 462 512355 0.001 32.768 32768 0 0 0 0
+121	5737143 634612 462 512355 0.001 32.768 32768 0 0 0 0
+122	6371755 634677 463 512356 0.001 32.768 32768 0 25 5296 43160
+123	7006432 634612 463 512356 0.001 32.768 32768 0 0 0 0
+0	7641044 8 0 0 0 0 1 0 0 0 0
+1	7641052 8 0 0 0 0 1 0 0 0 0
+2	7641060 8 0 0 0 0 1 0 0 0 0
+3	7641068 8 0 0 0 0 1 0 0 0 0
+4	7641076 8 0 0 0 0 1 0 0 0 0
+5	7641084 8 0 0 0 0 1 0 0 0 0
+6	7641092 8 0 0 0 0 1 0 0 0 0
+7	7641100 8 0 0 0 0 1 0 0 0 0
+8	7641108 8 0 0 0 0 1 0 0 0 0
+9	7641116 8 0 0 0 0 1 0 0 0 0
+10	7641124 9 0 0 0 0 1 0 0 0 0
+11	7641133 9 0 0 0 0 1 0 0 0 0
+12	7641142 9 0 0 0 0 1 0 0 0 0
+13	7641151 9 0 0 0 0 1 0 0 0 0
+14	7641160 9 0 0 0 0 1 0 0 0 0
+15	7641169 9 0 0 0 0 1 0 0 0 0
+16	7641178 9 0 0 0 0 1 0 0 0 0
+17	7641187 9 0 0 0 0 1 0 0 0 0
+18	7641196 9 0 0 0 0 1 0 0 0 0
+19	7641205 9 0 0 0 0 1 0 0 0 0
+20	7641214 9 0 0 0 0 1 0 0 0 0
+21	7641223 9 0 0 0 0 1 0 0 0 0
+22	7641232 9 0 0 0 0 1 0 0 0 0
+23	7641241 172 0 410 0 0.0000004988 9 0 1 4 4
+24	7641413 9 0 0 0 0 1 0 0 0 0
+25	7641422 9 0 0 0 0 1 0 0 0 0
+26	7641431 9 0 0 0 0 1 0 0 0 0
+27	7641440 172 0 408 0 0.0000004988 9 0 1 4 4
+28	7641612 9 0 0 0 0 1 0 0 0 0
+29	7641621 174 0 413 0 0.0000005052 9 0 1 4 4
+30	7641795 9 0 0 0 0 1 0 0 0 0
+31	7641804 9 0 0 0 0 1 0 0 0 0
+32	7641813 9 0 0 0 0 1 0 0 0 0
+33	7641822 174 0 412 0 0.0000005052 9 0 1 4 4
+34	7641996 9 0 0 0 0 1 0 0 0 0
+35	7642005 174 0 415 0 0.0000005052 9 0 1 4 4
+36	7642179 9 0 0 0 0 1 0 0 0 0
+37	7642188 9 0 0 0 0 1 0 0 0 0
+38	7642197 9 0 0 0 0 1 0 0 0 0
+39	7642206 174 0 414 0 0.0000005052 9 0 1 4 4
+40	7642380 9 0 0 0 0 1 0 0 0 0
+41	7642389 174 0 417 0 0.0000005052 9 0 1 4 4
+42	7642563 9 0 0 0 0 1 0 0 0 0
+43	7642572 9 0 0 0 0 1 0 0 0 0
+44	7642581 9 0 0 0 0 1 0 0 0 0
+45	7642590 174 0 416 0 0.0000005052 9 0 1 4 4
+46	7642764 9 0 0 0 0 1 0 0 0 0
+47	7642773 172 0 409 0 0.0000004988 9 0 1 4 4
+48	7642945 9 0 0 0 0 1 0 0 0 0
+49	7642954 9 0 0 0 0 1 0 0 0 0
+50	7642963 9 0 0 0 0 1 0 0 0 0
+51	7642972 172 0 411 0 0.0000004988 9 0 1 4 4
+52	7643144 82 138 360 0 0.0000004644 4 36 164 400 48704
+53	7643226 76 138 360 0 0.0000004644 4 0 0 0 0
+54	7643302 82 139 358 0 0.0000004644 4 36 172 416 52800
+55	7643384 76 139 358 0 0.0000004644 4 0 0 0 0
+56	7643460 83 140 397 0 0.0000004708 4 36 172 416 52800
+57	7643543 77 140 397 0 0.0000004708 4 0 0 0 0
+58	7643620 83 141 396 0 0.0000004708 4 36 172 416 52800
+59	7643703 77 141 396 0 0.0000004708 4 0 0 0 0
+60	7643780 83 142 399 0 0.0000004708 4 36 172 416 52800
+61	7643863 77 142 399 0 0.0000004708 4 0 0 0 0
+62	7643940 83 143 398 0 0.0000004708 4 36 172 416 52800
+63	7644023 77 143 398 0 0.0000004708 4 0 0 0 0
+64	7644100 83 144 401 0 0.0000004708 4 36 172 416 52800
+65	7644183 77 144 401 0 0.0000004708 4 0 0 0 0
+66	7644260 83 145 400 0 0.0000004708 4 36 172 416 52800
+67	7644343 77 145 400 0 0.0000004708 4 0 0 0 0
+68	7644420 82 146 359 0 0.0000004644 4 36 172 416 52800
+69	7644502 76 146 359 0 0.0000004644 4 0 0 0 0
+70	7644578 82 147 361 0 0.0000004644 4 36 164 400 48704
+71	7644660 76 147 361 0 0.0000004644 4 0 0 0 0
+72	7644736 82 148 364 0 0.0000004644 4 36 164 400 48704
+73	7644818 82 148 364 0 0.0000004644 4 43 171 428 54500
+74	7644900 82 149 362 0 0.0000004644 4 36 172 416 52800
+75	7644982 82 149 362 0 0.0000004644 4 43 179 444 58820
+76	7645064 83 150 403 0 0.0000004708 4 36 172 416 52800
+77	7645147 83 150 403 0 0.0000004708 4 43 179 444 58820
+78	7645230 83 151 402 0 0.0000004708 4 36 172 416 52800
+79	7645313 83 151 402 0 0.0000004708 4 43 179 444 58820
+80	7645396 83 152 405 0 0.0000004708 4 36 172 416 52800
+81	7645479 83 152 405 0 0.0000004708 4 43 179 444 58820
+82	7645562 83 153 404 0 0.0000004708 4 36 172 416 52800
+83	7645645 83 153 404 0 0.0000004708 4 43 179 444 58820
+84	7645728 83 154 407 0 0.0000004708 4 36 172 416 52800
+85	7645811 83 154 407 0 0.0000004708 4 43 179 444 58820
+86	7645894 83 155 406 0 0.0000004708 4 36 172 416 52800
+87	7645977 83 155 406 0 0.0000004708 4 43 179 444 58820
+88	7646060 82 156 363 0 0.0000004644 4 36 172 416 52800
+89	7646142 82 156 363 0 0.0000004644 4 43 179 444 58820
+90	7646224 82 157 365 0 0.0000004644 4 36 164 400 48704
+91	7646306 82 157 365 0 0.0000004644 4 43 171 428 54500
+92	7646388 93 198 420 0.0000001228 0.0000005488 4 43 171 428 54500
+93	7646481 93 198 420 0.0000001228 0.0000005488 4 36 164 400 48704
+94	7646574 93 199 421 0.0000001228 0.0000005488 4 43 171 428 54500
+95	7646667 93 199 421 0.0000001228 0.0000005488 4 36 164 400 48704
+96	7646760 93 210 418 0.0000001292 0.0000005488 4 43 179 444 58820
+97	7646853 93 210 418 0.0000001292 0.0000005488 4 36 172 416 52800
+98	7646946 94 211 435 0.0000001292 0.0000005552 4 43 179 444 58820
+99	7647040 94 211 435 0.0000001292 0.0000005552 4 36 172 416 52800
+100	7647134 98 212 434 0.0000001292 0.0000005552 4 43 179 444 58820
+101	7647232 98 212 434 0.0000001292 0.0000005552 4 36 172 416 52800
+102	7647330 98 213 437 0.0000001292 0.0000005552 4 43 179 444 58820
+103	7647428 98 213 437 0.0000001292 0.0000005552 4 36 172 416 52800
+104	7647526 98 214 436 0.0000001292 0.0000005552 4 43 179 444 58820
+105	7647624 98 214 436 0.0000001292 0.0000005552 4 36 172 416 52800
+106	7647722 98 215 439 0.0000001292 0.0000005552 4 43 179 444 58820
+107	7647820 98 215 439 0.0000001292 0.0000005552 4 36 172 416 52800
+108	7647918 98 216 438 0.0000001292 0.0000005552 4 43 179 444 58820
+109	7648016 98 216 438 0.0000001292 0.0000005552 4 36 172 416 52800
+110	7648114 97 217 419 0.0000001292 0.0000005488 4 43 179 444 58820
+111	7648211 97 217 419 0.0000001292 0.0000005488 4 36 172 416 52800
+112	7648308 648297 512367 1043143 32.769 65.233 32465 0 0 0 0
+113	8296605 648297 512367 1043143 32.769 65.233 32465 0 0 0 0
+114	8944902 648297 512368 1043144 32.769 65.233 32465 0 0 0 0
+115	9593199 648297 512368 1043144 32.769 65.233 32465 0 0 0 0
+116	10241496 648298 512369 1043145 32.769 65.233 32465 0 0 0 0
+117	10889794 648298 512369 1043145 32.769 65.233 32465 0 0 0 0
+118	11538092 648298 512370 1043146 32.769 65.233 32465 0 0 0 0
+119	12186390 648298 512370 1043146 32.769 65.233 32465 0 0 0 0
+120	12834688 648298 512371 1043147 32.769 65.233 32465 0 0 0 0
+121	13482986 648298 512371 1043147 32.769 65.233 32465 0 0 0 0
+122	14131284 648277 512372 1043130 32.769 65.232 32464 0 9 9587 16583
+123	14779561 648277 512372 1043130 32.769 65.232 32464 0 0 0 0
+124	15427838 15 1652 1652 0.1 0.1 1 6 6 6 36
+125	15427853 467380 1700 1043140 0.102 65.232 23746 0 2 8266 16532
+126	15895233 64435 1740 1043020 0.106 65.226 3257 1 1 3257 3257
+127	15959668 67692 1742 1043021 0.106 65.226 3257 18 18 58626 1055268
+128	16027360 67692 1745 1043024 0.106 65.226 3257 38 38 123766 4703108
+129	16095052 67692 1745 1043024 0.106 65.226 3257 39 39 127023 4953897
+130	16162744 67692 1746 1043025 0.106 65.226 3257 39 39 127023 4953897
+131	16230436 113900 1748 1043027 0.106 65.226 5454 6 648 258401 25296515
+132	16344336 299162 1749 1043108 0.106 65.231 15087 0 650 144038 20893450
+133	16643498 420721 1778 1043140 0.107 65.232 21187 0 0 0 0
+134	17064219 415677 1796 1043090 0.108 65.229 21186 0 0 0 0
+135	17479896 81458 3348 1043100 0.21 65.23 4133 2 15 23126 239038
+136	17561354 139918 3371 1043122 0.211 65.231 4132 -0.71160671859832 91.818607209799 171394.35062921 8108333.5611417
+137	17701272 98933 3412 1042924 0.214 65.219 4127 0.004 0.308 17.235999999999 0.20939199999996
+138	17800205 86905 3412 1042924 0.214 65.219 4145 12 12 49740 596880
+139	17887110 79918 3440 1042949 0.215 65.22 4127 0 1 5 5
+140	17967028 80017 3440 1042949 0.215 65.22 4132 0 1 5 5
+141	18047045 43818 3443 1042869 0.216 65.216 2197 0 0 0 0
+142	18090863 46208 3445 1042871 0.216 65.216 2197 6 648 131378 20342618
+143	18137071 43818 3455 1042881 0.216 65.216 2197 7 7 15379 107653
+144	18180889 99 138805 424442 8.919 27.222 5 0 0 0 0
+122	18180988 684514 1043148 1554877 65.233 98 32768 0 25 4879 38353
+123	18865502 684457 1043148 1554877 65.233 98 32768 0 0 0 0
+112	19549959 684457 1043159 1554922 65.234 98.001 32768 0 0 0 0
+113	20234416 684457 1043159 1554922 65.234 98.001 32768 0 0 0 0
+114	20918873 684457 1043160 1554923 65.234 98.001 32768 0 0 0 0
+115	21603330 684457 1043160 1554923 65.234 98.001 32768 0 0 0 0
+116	22287787 684457 1043161 1554924 65.234 98.001 32768 0 0 0 0
+117	22972244 684457 1043161 1554924 65.234 98.001 32768 0 0 0 0
+118	23656701 684457 1043162 1554925 65.234 98.001 32768 0 0 0 0
+119	24341158 684457 1043162 1554925 65.234 98.001 32768 0 0 0 0
+120	25025615 684457 1043163 1554926 65.234 98.001 32768 0 0 0 0
+121	25710072 684457 1043163 1554926 65.234 98.001 32768 0 0 0 0
+vector 145 Highway.car[0].lteNic.mac harqErrorRate_3rd_Ul:vector ETV
+attr source harqErrorRate_3rd_Ul
+attr title "Harq Error Rate Ul, vector"
+attr unit ""
+vector 146 Highway.car[1].lteNic.phy servingCell:vector ETV
+attr source servingCell
+attr title "ID of the serving eNodeB for the UE, vector"
+attr unit ""
+vector 147 Highway.car[1].lteNic.mac receivedPacketFromLowerLayer:vector(packetBytes) ETV
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+vector 148 Highway.eNodeB5.x2App[1].client rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, vector(packetBytes)"
+vector 149 Highway.eNodeB6.x2App[0].client rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, vector(packetBytes)"
+vector 150 Highway.eNodeB5.lteNic.mac receivedPacketFromLowerLayer:vector(packetBytes) ETV
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+vector 151 Highway.eNodeB5.lteNic.mac sentPacketToLowerLayer:vector(packetBytes) ETV
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+vector 152 Highway.eNodeB5.lteNic.channelModel rcvdSinr:vector ETV
+attr source rcvdSinr
+attr title "SINR measured at packet reception, vector"
+attr unit dB
+vector 153 Highway.eNodeB5.lteNic.mac measuredItbs:vector ETV
+attr source measuredItbs
+attr title "TBS index, vector"
+attr unit ""
+122	26395936 715274 1554927 2114932 98.001 130.768 32768 0 25 1332 24596
+123	27111210 715230 1554927 2114932 98.001 130.768 32768 0 0 0 0
+112	27826440 715231 1554936 2114946 98.002 130.769 32768 0 0 0 0
+113	28541671 715231 1554936 2114946 98.002 130.769 32768 0 0 0 0
+114	29256902 715231 1554937 2114947 98.002 130.769 32768 0 0 0 0
+115	29972133 715231 1554937 2114947 98.002 130.769 32768 0 0 0 0
+116	30687364 715231 1554938 2114948 98.002 130.769 32768 0 0 0 0
+117	31402595 715231 1554938 2114948 98.002 130.769 32768 0 0 0 0
+118	32117826 715231 1554939 2114949 98.002 130.769 32768 0 0 0 0
+119	32833057 715231 1554939 2114949 98.002 130.769 32768 0 0 0 0
+120	33548288 715308 1554940 2114950 98.002 130.769 32768 0 25 3295 39441
+121	34263596 715231 1554940 2114950 98.002 130.769 32768 0 0 0 0
+47	34978827 107 1722315 1723185 108.0000100972 108.0500100472 4 0 1 2 2
+51	34978934 107 1722305 1723197 108.00001 108.0500101412 4 0 1 2 2
+68	34979041 53 1722313 1723182 108.0000100972 108.05001 2 48 52 100 5008
+69	34979094 51 1722313 1723182 108.0000100972 108.05001 2 0 0 0 0
+70	34979145 53 1722304 1723192 108.00001 108.0500100972 2 48 52 100 5008
+71	34979198 51 1722304 1723192 108.00001 108.0500100972 2 0 0 0 0
+88	34979249 53 1722315 1723183 108.0000100972 108.05001 2 48 52 100 5008
+89	34979302 53 1722315 1723183 108.0000100972 108.05001 2 55 59 114 6506
+90	34979355 53 1722305 1723194 108.00001 108.0500100972 2 48 52 100 5008
+91	34979408 53 1722305 1723194 108.00001 108.0500100972 2 55 59 114 6506
+94	34979461 58 1722307 1723198 108.0000100972 108.0500101912 2 55 59 114 6506
+95	34979519 58 1722307 1723198 108.0000100972 108.0500101912 2 48 52 100 5008
+110	34979577 60 1722319 1723186 108.0000101912 108.0500100972 2 55 59 114 6506
+111	34979637 60 1722319 1723186 108.0000101912 108.0500100972 2 48 52 100 5008
+112	34979697 118434 2114962 2209785 130.77 136.18 5411 0 0 0 0
+113	35098131 118434 2114962 2209785 130.77 136.18 5411 0 0 0 0
+114	35216565 118434 2114963 2209786 130.77 136.18 5411 0 0 0 0
+115	35334999 118434 2114963 2209786 130.77 136.18 5411 0 0 0 0
+116	35453433 118434 2114964 2209787 130.77 136.18 5411 0 0 0 0
+117	35571867 118434 2114964 2209787 130.77 136.18 5411 0 0 0 0
+118	35690301 118434 2114965 2209788 130.77 136.18 5411 0 0 0 0
+119	35808735 118434 2114965 2209788 130.77 136.18 5411 0 0 0 0
+120	35927169 118445 2114966 2209789 130.77 136.18 5411 0 25 1016 6064
+121	36045614 118434 2114966 2209789 130.77 136.18 5411 0 0 0 0
+122	36164048 118456 2114951 2209790 130.769 136.18 5412 0 0 0 0
+123	36282504 118456 2114951 2209790 130.769 136.18 5412 0 0 0 0
+124	36400960 24 1723165 1723165 108.05001 108.05001 1 5 5 5 25
+125	36400984 459043 1043215 2209685 65.236 136.174 21574 0 2 1948 3896
+126	36860027 76296 1043347 2209517 65.246 136.166 3547 1 1 3547 3547
+127	36936323 79843 1043348 2209519 65.246 136.166 3547 18 18 63846 1149228
+128	37016166 79849 1043351 2209522 65.246 136.166 3547 38 38 134786 5121868
+129	37096015 79849 1043351 2209522 65.246 136.166 3547 39 39 138333 5394987
+130	37175864 79849 1043352 2209523 65.246 136.166 3547 39 39 138333 5394987
+131	37255713 104583 1043199 2209714 65.236 136.176 4632 19 648 278368 51543782
+132	37360296 323812 1043182 2209721 65.235 136.176 15029 0 650 145519 46719903
+133	37684108 220505 1043148 1723110 65.233 108.047 10421 0 0 0 0
+134	37904613 370787 1043157 2209708 65.233 136.175 17337 0 0 0 0
+135	38275400 34678 1043183 2209698 65.235 136.175 1657 2 10 3395 7315
+136	38310078 33969 1043214 1717517 65.236 107.721 971 0.076883250563668 44.899867869821 24984.441678982 699987.12007773
+137	38344047 41886 1043164 2209772 65.234 136.179 1647 0.004 1.804 10.62 4.4228959999998
+138	38385933 22373 1043164 1717588 65.234 107.725 1015 12 12 12180 146160
+139	38408306 34341 1043191 2209706 65.235 136.175 1646 0 1 10 10
+140	38442647 34578 1043191 2209706 65.235 136.175 1657 0 1 11 11
+141	38477225 23276 1043195 2209710 65.236 136.176 1085 0 0 0 0
+142	38500501 24734 1043197 2209712 65.236 136.176 1085 19 648 140035 46148795
+143	38525235 23276 1043207 2209722 65.236 136.176 1085 7 7 7595 53165
+144	38548511 216 1282228 2178254 80.318 134.423 10 0 1 1 1
+145	38548727 21 1559823 1559823 98.315 98.315 1 0 0 0 0
+146	38548748 20 1587352 1587352 100.1 100.1 1 6 6 6 36
+147	38548768 11514 1587681 2209749 100.117 136.177 493 21 650 71977 26258901
+148	38560282 29 1722314 1722314 108.0000100972 108.0000100972 1 2 2 2 4
+149	38560311 29 1723193 1723193 108.0500100972 108.0500100972 1 2 2 2 4
+150	38560340 223503 1723235 2209732 108.052 136.176 10207 0 2 1366 2732
+151	38783843 152161 1723235 2209772 108.052 136.179 6917 0 0 0 0
+152	38936004 24376 1725934 2209731 108.211 136.176 680 -0.64945483470896 33.180216613574 17205.652935414 455443.46009489
+153	38960380 16226 1725978 2209772 108.214 136.179 706 12 12 8472 101664

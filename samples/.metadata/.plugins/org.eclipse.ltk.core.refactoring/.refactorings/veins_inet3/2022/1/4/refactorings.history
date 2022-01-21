@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;veins_inet3/src/veins_inet/recordf.cc&apos; to &apos;recordv.cc&apos;" description="Rename resource &apos;recordf.cc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/veins_inet/recordf.cc" name="recordv.cc" stamp="1642562091326" updateReferences="true"/>
+</session>

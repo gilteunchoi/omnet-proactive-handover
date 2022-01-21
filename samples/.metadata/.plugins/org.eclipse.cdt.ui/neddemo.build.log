@@ -1,0 +1,6 @@
+15:35:29 **** Incremental Build of configuration release for project neddemo ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+
+15:35:29 Build Finished (took 465ms)
+

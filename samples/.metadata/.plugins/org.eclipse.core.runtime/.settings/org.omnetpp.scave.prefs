@@ -1,0 +1,12 @@
+DataTable.SCALAR.Measurement.width=72
+DataTable.SCALAR.Module.width=188
+DataTable.SCALAR.Name.width=150
+DataTable.SCALAR.Value.width=290
+DataTable.VECTOR.Count.width=43
+DataTable.VECTOR.Experiment.width=38
+DataTable.VECTOR.Mean.width=76
+DataTable.VECTOR.Measurement.width=28
+DataTable.VECTOR.Module.width=236
+DataTable.VECTOR.Name.width=216
+DataTable.VECTOR.StdDev.width=224
+eclipse.preferences.version=1

@@ -1,0 +1,8 @@
+15:35:38 **** Incremental Build of configuration debug for project veins_testsims ****
+make MODE=debug all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_testsims/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_testsims/src'
+
+15:35:39 Build Finished (took 484ms)
+

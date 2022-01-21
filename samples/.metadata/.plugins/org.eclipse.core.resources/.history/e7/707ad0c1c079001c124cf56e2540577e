@@ -1,0 +1,300 @@
+                                                                
+version 2
+run dummy-0-20220120-15:38:59-4106
+attr configname dummy
+attr datetime 20220120-15:38:59
+attr experiment dummy
+attr inifile omnetpp3.ini
+attr iterationvars $numUEs=10
+attr iterationvarsf numUEs=10-
+attr measurement $numUEs=10
+attr network lte.simulations.a_testworld_03.Highway3
+attr processid 4106
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+itervar numUEs 10
+param **.coreDebug false
+param **.routingRecorder.enabled false
+param *.playgroundSizeX 20000m
+param *.playgroundSizeY 20000m
+param *.playgroundSizeZ 10000m
+param *.veinsManager.moduleType "\"lte.corenetwork.nodes.cars.Car\""
+param *.veinsManager.moduleName "\"car\""
+param *.veinsManager.launchConfig "xmldoc(\"helloworld.launchd.xml\")"
+param *.veinsManager.updateInterval 0.1s
+param *.car[*].mobilityType "\"VeinsInetMobility\""
+param **.channelControl.pMax 10W
+param **.channelControl.alpha 1.0
+param **.channelControl.carrierFrequency 2100e+6Hz
+param **.eNodeB1.mobility.initialZ 70m
+param **.eNodeB1.lteNic.phy.eNodeBTxPower 46
+param **.droneB1.mobility.initialZ 100m
+param **.droneB1.lteNic.phy.eNodeBTxPower 23
+param **.droneB2.mobility.initialZ 100m
+param **.droneB2.lteNic.phy.eNodeBTxPower 23
+param **.eNodeB2.mobility.initialZ 70m
+param **.eNodeB2.lteNic.phy.eNodeBTxPower 46
+param **.droneB3.mobility.initialZ 100m
+param **.droneB3.lteNic.phy.eNodeBTxPower 23
+param **.droneB4.mobility.initialZ 100m
+param **.droneB4.lteNic.phy.eNodeBTxPower 23
+param **.eNodeB3.mobility.initialZ 70m
+param **.eNodeB3.lteNic.phy.eNodeBTxPower 46
+param **.droneB5.mobility.initialZ 100m
+param **.droneB5.lteNic.phy.eNodeBTxPower 23
+param **.droneB6.mobility.initialZ 100m
+param **.droneB6.lteNic.phy.eNodeBTxPower 23
+param **.eNodeB4.mobility.initialZ 70m
+param **.eNodeB4.lteNic.phy.eNodeBTxPower 46
+param *.car[*].lteNic.phy.dynamicCellAssociation true
+param **.car[*].masterId 1
+param **.car[*].macCellId 1
+param **.eNodeB1.macCellId 1
+param **.eNodeB1.macNodeId 1
+param **.droneB1.macCellId 2
+param **.droneB1.macNodeId 2
+param **.droneB2.macCellId 3
+param **.droneB2.macNodeId 3
+param **.eNodeB2.macCellId 4
+param **.eNodeB2.macNodeId 4
+param **.droneB3.macCellId 5
+param **.droneB3.macNodeId 5
+param **.droneB4.macCellId 6
+param **.droneB4.macNodeId 6
+param **.eNodeB3.macCellId 7
+param **.eNodeB3.macNodeId 7
+param **.droneB5.macCellId 8
+param **.droneB5.macNodeId 8
+param **.droneB6.macCellId 9
+param **.droneB6.macNodeId 9
+param **.eNodeB7.macCellId 10
+param **.eNodeB7.macNodeId 10
+param **.eNodeBCount 10
+param **.rbAllocationType "\"localized\""
+param **.feedbackType "\"ALLBANDS\""
+param **.feedbackGeneratorType "\"IDEAL\""
+param **.maxHarqRtx 3
+param **.numUe 10
+param **.cellInfo.ruRange 50
+param **.cellInfo.ruTxPower "\"50,50,50;\""
+param **.cellInfo.antennaCws "\"2;\""
+param **.cellInfo.numRbDl 25
+param **.cellInfo.numRbUl 25
+param **.numBands 25
+param **.fbDelay 1
+param *.car[*].lteNic.phy.enableHandover true
+param *.eNodeB*.lteNic.phy.enableHandover true
+param *.eNodeB*.lteNic.phy.broadcastMessageInterval 0.5s
+param *.droneB*.lteNic.phy.enableHandover true
+param *.droneB*.lteNic.phy.broadcastMessageInterval 0.5s
+param *.eNodeB1.numX2Apps 1
+param *.droneB1.numX2Apps 2
+param *.droneB2.numX2Apps 2
+param *.eNodeB2.numX2Apps 2
+param *.droneB3.numX2Apps 2
+param *.droneB4.numX2Apps 2
+param *.eNodeB3.numX2Apps 2
+param *.droneB5.numX2Apps 2
+param *.droneB6.numX2Apps 2
+param *.eNodeB4.numX2Apps 1
+param *.eNodeB*.x2App[*].server.localPort "5000 + ancestorIndex(1)"
+param *.droneB*.x2App[*].server.localPort "5000 + ancestorIndex(1)"
+param *.eNodeB1.x2App[0].client.connectAddress "\"droneB1%x2ppp0\""
+param *.droneB1.x2App[0].client.connectAddress "\"eNodeB1%x2ppp0\""
+param *.droneB1.x2App[1].client.connectAddress "\"droneB2%x2ppp0\""
+param *.droneB2.x2App[0].client.connectAddress "\"droneB1%x2ppp0\""
+param *.droneB2.x2App[1].client.connectAddress "\"eNodeB2%x2ppp0\""
+param *.eNodeB2.x2App[0].client.connectAddress "\"droneB2%x2ppp0\""
+param *.eNodeB2.x2App[1].client.connectAddress "\"droneB3%x2ppp0\""
+param *.droneB3.x2App[0].client.connectAddress "\"eNodeB2%x2ppp0\""
+param *.droneB3.x2App[1].client.connectAddress "\"droneB4%x2ppp0\""
+param *.droneB4.x2App[0].client.connectAddress "\"droneB3%x2ppp0\""
+param *.droneB4.x2App[1].client.connectAddress "\"eNodeB3%x2ppp0\""
+param *.eNodeB3.x2App[0].client.connectAddress "\"droneB4%x2ppp0\""
+param *.eNodeB3.x2App[1].client.connectAddress "\"droneB5%x2ppp0\""
+param *.droneB5.x2App[0].client.connectAddress "\"eNodeB3%x2ppp0\""
+param *.droneB5.x2App[1].client.connectAddress "\"droneB6%x2ppp0\""
+param *.droneB6.x2App[0].client.connectAddress "\"droneB5%x2ppp0\""
+param *.droneB6.x2App[1].client.connectAddress "\"eNodeB4%x2ppp0\""
+param *.eNodeB4.x2App[0].client.connectAddress "\"droneB6%x2ppp0\""
+param **.sctp.nagleEnabled false
+param **.sctp.enableHeartbeats false
+
+vector 0 Highway3.server.ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Highway3.server.ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 2 Highway3.router.ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Highway3.router.ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 4 Highway3.router.ppp[1].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 5 Highway3.router.ppp[1].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 6 Highway3.pgw.ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 7 Highway3.pgw.ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 8 Highway3.pgw.ppp[1].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 9 Highway3.pgw.ppp[1].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 10 Highway3.pgw.ppp[2].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 11 Highway3.pgw.ppp[2].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 12 Highway3.pgw.ppp[3].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 13 Highway3.pgw.ppp[3].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 14 Highway3.pgw.ppp[4].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 15 Highway3.pgw.ppp[4].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 16 Highway3.pgw.ppp[5].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 17 Highway3.pgw.ppp[5].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 18 Highway3.pgw.ppp[6].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 19 Highway3.pgw.ppp[6].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 20 Highway3.pgw.ppp[7].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 21 Highway3.pgw.ppp[7].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 22 Highway3.pgw.ppp[8].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 23 Highway3.pgw.ppp[8].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 24 Highway3.pgw.ppp[9].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 25 Highway3.pgw.ppp[9].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 26 Highway3.pgw.pppInterface.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 27 Highway3.pgw.pppInterface.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 28 Highway3.eNodeB1.pppIf.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 29 Highway3.eNodeB1.pppIf.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 30 Highway3.eNodeB1.x2ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 31 Highway3.eNodeB1.x2ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 32 Highway3.droneB1.pppIf.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 33 Highway3.droneB1.pppIf.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 34 Highway3.droneB1.x2ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 35 Highway3.droneB1.x2ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 36 Highway3.droneB1.x2ppp[1].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 37 Highway3.droneB1.x2ppp[1].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 38 Highway3.droneB2.pppIf.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 39 Highway3.droneB2.pppIf.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 40 Highway3.droneB2.x2ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 41 Highway3.droneB2.x2ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 42 Highway3.droneB2.x2ppp[1].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 43 Highway3.droneB2.x2ppp[1].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 44 Highway3.eNodeB2.pppIf.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 45 Highway3.eNodeB2.pppIf.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 46 Highway3.eNodeB2.x2ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 47 Highway3.eNodeB2.x2ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 48 Highway3.eNodeB2.x2ppp[1].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 49 Highway3.eNodeB2.x2ppp[1].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 50 Highway3.droneB3.pppIf.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 51 Highway3.droneB3.pppIf.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 52 Highway3.droneB3.x2ppp[0].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 53 Highway3.droneB3.x2ppp[0].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 54 Highway3.droneB3.x2ppp[1].queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 55 Highway3.droneB3.x2ppp[1].ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 56 Highway3.droneB4.pppIf.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 57 Highway3.droneB4.pppIf.ppp txState:vector ETV
+attr interpolationmode sample-hold
+attr title "tx state, vector"
+vector 58 Highway3.droneB4.x2ppp[0].queue queueLength:vect

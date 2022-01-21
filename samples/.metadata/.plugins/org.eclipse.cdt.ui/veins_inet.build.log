@@ -1,0 +1,15 @@
+15:35:33 **** Incremental Build of configuration gcc-debug for project veins_inet ****
+make MODE=debug all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet/src'
+MSGC: veins_inet/VeinsInetSampleMessage.msg
+veins_inet/VeinsInetSampleMessage.msg:27: Error: cannot resolve import 'inet.common.INETDefs'
+veins_inet/VeinsInetSampleMessage.msg:28: Error: cannot resolve import 'inet.common.packet.chunk.Chunk'
+Makefile:149: recipe for target 'veins_inet/VeinsInetSampleMessage_m.h' failed
+veins_inet/VeinsInetSampleMessage.msg:34: Error: 'VeinsInetSampleMessage': unknown base class 'inet::FieldsChunk'
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/subprojects/veins_inet/src'
+Makefile:36: recipe for target 'all' failed
+make[1]: *** [veins_inet/VeinsInetSampleMessage_m.h] Error 1
+make: *** [all] Error 2
+
+15:35:33 Build Finished (took 464ms)
+

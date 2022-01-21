@@ -1,0 +1,8 @@
+11:52:14 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release all 
+make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/veins-veins-5.0/src'
+
+11:52:14 Build Finished (took 464ms)
+

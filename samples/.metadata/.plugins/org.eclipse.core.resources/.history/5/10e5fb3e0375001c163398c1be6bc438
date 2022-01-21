@@ -1,0 +1,3446 @@
+version 2
+run single-pare-TCP-0-20220114-15:27:45-21930
+attr configname single-pare-TCP
+attr datetime 20220114-15:27:45
+attr experiment single-pare-TCP
+attr inifile omnetpp2.ini
+attr iterationvars $numUEs=10
+attr iterationvarsf numUEs=10-
+attr measurement $numUEs=10
+attr network lte.simulations.a_testworld_02.Highway2
+attr processid 21930
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+itervar numUEs 10
+param *.server.numTcpApps 1
+param *.server.tcpApp[0].typename "\"TCPSessionApp\""
+param *.server.tcpApp[0].connectPort 1000
+param *.server.tcpApp[0].localPort 1000
+param *.server.tcpApp[0].sendBytes 1GiB
+param *.server.tcpApp[0].ctive true
+param *.server.tcpApp[0].tOpen uniform(0.210s,0.3s)
+param *.server.tcpApp[0].tSend uniform(0.35s,0.25s)
+param *.server.tcpApp[0].connectAddress "\"car[0]\""
+param *.server.tcpApp[0].localAddress "\"server[0]\""
+param *.car[0].numTcpApps 1
+param *.car[0].tcpApp[0].typename "\"TCPSinkApp\""
+param *.car[0].tcpApp[0].localPort 1000
+param **.tcpApp[*].tClose -1s
+param **.coreDebug false
+param **.routingRecorder.enabled false
+param *.playgroundSizeX 20000m
+param *.playgroundSizeY 20000m
+param *.playgroundSizeZ 10000m
+param *.veinsManager.moduleType "\"lte.corenetwork.nodes.cars.Car\""
+param *.veinsManager.moduleName "\"car\""
+param *.veinsManager.launchConfig "xmldoc(\"helloworld.launchd.xml\")"
+param *.veinsManager.updateInterval 0.1s
+param *.car[*].mobilityType "\"VeinsInetMobility\""
+param **.channelControl.pMax 10W
+param **.channelControl.alpha 1.0
+param **.channelControl.carrierFrequency 2100e+6Hz
+param **.eNodeB1.mobility.initialZ 70m
+param **.eNodeB2.mobility.initialZ 70m
+param **.droneB1.mobility.initialZ 100m
+param *.car[*].lteNic.phy.dynamicCellAssociation true
+param **.car[*].masterId 1
+param **.car[*].macCellId 1
+param **.eNodeB1.macCellId 1
+param **.eNodeB1.macNodeId 1
+param **.droneB1.macCellId 2
+param **.droneB1.macNodeId 2
+param **.eNodeB2.macCellId 3
+param **.eNodeB2.macNodeId 3
+param **.eNodeBCount 3
+param **.rbAllocationType "\"localized\""
+param **.feedbackType "\"ALLBANDS\""
+param **.feedbackGeneratorType "\"IDEAL\""
+param **.maxHarqRtx 3
+param **.numUe 10
+param **.cellInfo.ruRange 50
+param **.cellInfo.ruTxPower "\"50,50,50;\""
+param **.cellInfo.antennaCws "\"2;\""
+param **.cellInfo.numRbDl 25
+param **.cellInfo.numRbUl 25
+param **.numBands 25
+param **.fbDelay 1
+param *.car[*].lteNic.phy.enableHandover true
+param *.eNodeB*.lteNic.phy.enableHandover true
+param *.eNodeB*.lteNic.phy.broadcastMessageInterval 0.5s
+param *.eNodeB1.numX2Apps 1
+param *.droneB1.numX2Apps 2
+param *.eNodeB2.numX2Apps 1
+param *.eNodeB*.x2App[*].server.localPort "5000 + ancestorIndex(1)"
+param *.droneB*.x2App[*].server.localPort "5000 + ancestorIndex(1)"
+param *.eNodeB1.x2App[0].client.connectAddress "\"droneB1%x2ppp0\""
+param *.droneB1.x2App[0].client.connectAddress "\"eNodeB1%x2ppp0\""
+param *.droneB1.x2App[1].client.connectAddress "\"eNodeB2%x2ppp0\""
+param *.eNodeB2.x2App[0].client.connectAddress "\"droneB1%x2ppp0\""
+param **.sctp.nagleEnabled false
+param **.sctp.enableHeartbeats false
+
+scalar Highway2.eNodeB1.x2App[0].client ums 1452
+scalar Highway2.eNodeB2.x2App[0].client ums 1452
+scalar Highway2.droneB1.x2App[0].client ums 1452
+scalar Highway2.droneB1.x2App[1].client ums 1452
+scalar Highway2.car[0].tcpApp[0] rcvdPk:count 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, count"
+scalar Highway2.car[0].tcpApp[0] rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, sum(packetBytes)"
+statistic Highway2.car[0].tcpApp[0] endToEndDelay:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source messageAge(rcvdPk)
+attr title "end-to-end delay, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar Highway2.car[0].lteNic.pdcpRrc sentPacketToLowerLayer:count 5
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.car[0].lteNic.pdcpRrc sentPacketToLowerLayer:sum(packetBytes) 225
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.car[0].lteNic.pdcpRrc sentPacketToUpperLayer:count 2
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.car[0].lteNic.pdcpRrc sentPacketToUpperLayer:sum(packetBytes) 84
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.car[0].lteNic.pdcpRrc receivedPacketFromLowerLayer:count 2
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.car[0].lteNic.pdcpRrc receivedPacketFromLowerLayer:sum(packetBytes) 86
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.car[0].lteNic.pdcpRrc receivedPacketFromUpperLayer:count 5
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.car[0].lteNic.pdcpRrc receivedPacketFromUpperLayer:sum(packetBytes) 220
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.car[0].lteNic.rlc.um rlcPduPacketLossDl:mean 0.66666666666667
+attr source rlcPduPacketLossDl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.rlc.um rlcPduPacketLossUl:mean 0.33333333333333
+attr source rlcPduPacketLossUl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.rlc.um rlcPduThroughputUl:mean 0.7609143669589
+attr source rlcPduThroughputUl
+attr title "Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.car[0].lteNic.rlc.um rlcPduDelayUl:mean 30.608
+attr source rlcPduDelayUl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.car[0].lteNic.rlc.um rlcPduThroughputDl:mean 4.5821023968889
+attr source rlcPduThroughputDl
+attr title "Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.car[0].lteNic.rlc.um rlcPduDelayDl:mean 2.104
+attr source rlcPduDelayDl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.car[0].lteNic.rlc.um rlcCellPacketLossUl:mean -nan
+attr source rlcCellPacketLossUl
+attr title "rlc Cell Packet Loss, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.rlc.um rlcCellPacketLossDl:mean -nan
+attr source rlcCellPacketLossDl
+attr title "rlc Cell Packet Loss, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.rlc.um rlcCellThroughputDl:mean -nan
+attr source rlcCellThroughputDl
+attr title "Cell Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.car[0].lteNic.rlc.um rlcCellThroughputUl:mean -nan
+attr source rlcCellThroughputUl
+attr title "Cell Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.car[0].lteNic.rlc.um rlcPacketLossTotal:mean 0.66666666666667
+attr source rlcPacketLossTotal
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.rlc.um rlcPacketLossDl:mean 0.66666666666667
+attr source rlcPacketLossDl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.rlc.um rlcPacketLossUl:mean 0.66666666666667
+attr source rlcPacketLossUl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.rlc.um rlcThroughputUl:mean 0.47062760806133
+attr source rlcThroughputUl
+attr title "Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.car[0].lteNic.rlc.um rlcDelayUl:mean 68.906
+attr source rlcDelayUl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.car[0].lteNic.rlc.um rlcThroughputDl:mean 4.3816475777844
+attr source rlcThroughputDl
+attr title "Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.car[0].lteNic.rlc.um rlcDelayDl:mean 3.560981231259
+attr source rlcDelayDl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.car[0].lteNic.rlc.um sentPacketToLowerLayer:count 6
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.car[0].lteNic.rlc.um sentPacketToLowerLayer:sum(packetBytes) 235
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.car[0].lteNic.rlc.um sentPacketToUpperLayer:count 2
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.car[0].lteNic.rlc.um sentPacketToUpperLayer:sum(packetBytes) 86
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.car[0].lteNic.rlc.um receivedPacketFromLowerLayer:count 2
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.car[0].lteNic.rlc.um receivedPacketFromLowerLayer:sum(packetBytes) 90
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.car[0].lteNic.rlc.um receivedPacketFromUpperLayer:count 5
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.car[0].lteNic.rlc.um receivedPacketFromUpperLayer:sum(packetBytes) 225
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.car[0].lteNic.rlc.am rlcPduPacketLossDl:mean -nan
+attr source rlcPduPacketLossDl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.rlc.am rlcPduPacketLossUl:mean -nan
+attr source rlcPduPacketLossUl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.rlc.am rlcPduThroughputUl:mean -nan
+attr source rlcPduThroughputUl
+attr title "Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.car[0].lteNic.rlc.am rlcPduDelayUl:mean -nan
+attr source rlcPduDelayUl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.car[0].lteNic.rlc.am rlcPduThroughputDl:mean -nan
+attr source rlcPduThroughputDl
+attr title "Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.car[0].lteNic.rlc.am rlcPduDelayDl:mean -nan
+attr source rlcPduDelayDl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.car[0].lteNic.rlc.am rlcCellPacketLossUl:mean -nan
+attr source rlcCellPacketLossUl
+attr title "rlc Cell Packet Loss, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.rlc.am rlcCellPacketLossDl:mean -nan
+attr source rlcCellPacketLossDl
+attr title "rlc Cell Packet Loss, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.rlc.am rlcCellThroughputDl:mean -nan
+attr source rlcCellThroughputDl
+attr title "Cell Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.car[0].lteNic.rlc.am rlcCellThroughputUl:mean -nan
+attr source rlcCellThroughputUl
+attr title "Cell Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.car[0].lteNic.rlc.am rlcPacketLossTotal:mean -nan
+attr source rlcPacketLossTotal
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.rlc.am rlcPacketLossDl:mean -nan
+attr source rlcPacketLossDl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.rlc.am rlcPacketLossUl:mean -nan
+attr source rlcPacketLossUl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.rlc.am rlcThroughputUl:mean -nan
+attr source rlcThroughputUl
+attr title "Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.car[0].lteNic.rlc.am rlcDelayUl:mean -nan
+attr source rlcDelayUl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.car[0].lteNic.rlc.am rlcThroughputDl:mean -nan
+attr source rlcThroughputDl
+attr title "Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.car[0].lteNic.rlc.am rlcDelayDl:mean -nan
+attr source rlcDelayDl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.car[0].lteNic.mac measuredItbs:mean -nan
+attr source measuredItbs
+attr title "TBS index, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.mac harqErrorRate_4th_Dl:mean 1
+attr source harqErrorRate_4th_Dl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.mac harqErrorRate_4th_Ul:mean 1
+attr source harqErrorRate_4th_Ul
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.mac harqErrorRate_3rd_Dl:mean 1
+attr source harqErrorRate_3rd_Dl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.mac harqErrorRate_3rd_Ul:mean 0.75
+attr source harqErrorRate_3rd_Ul
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.mac harqErrorRate_2nd_Dl:mean 0.8
+attr source harqErrorRate_2nd_Dl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.mac harqErrorRate_2nd_Ul:mean 0.8
+attr source harqErrorRate_2nd_Ul
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.mac harqErrorRate_1st_Dl:mean 0.83333333333333
+attr source harqErrorRate_1st_Dl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.mac harqErrorRate_1st_Ul:mean 0.83333333333333
+attr source harqErrorRate_1st_Ul
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.mac harqErrorRateDl:mean 0.89473684210526
+attr source harqErrorRateDl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.mac harqErrorRateUl:mean 0.83333333333333
+attr source harqErrorRateUl
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.mac macBufferOverFlowD2D:mean -nan
+attr source macBufferOverFlowD2D
+attr title "Mac buffer overflow as function of time, mean"
+attr unit Byte/s
+scalar Highway2.car[0].lteNic.mac macBufferOverFlowUl:mean -nan
+attr source macBufferOverFlowUl
+attr title "Mac buffer overflow as function of time, mean"
+attr unit Byte/s
+scalar Highway2.car[0].lteNic.mac macBufferOverFlowDl:mean -nan
+attr source macBufferOverFlowDl
+attr title "Mac buffer overflow as function of time, mean"
+attr unit Byte/s
+scalar Highway2.car[0].lteNic.mac macPacketLossDl:mean 0.66666666666667
+attr source macPacketLossDl
+attr title "Mac Packet Loss Dl, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.mac macPacketLossUl:mean 0.5
+attr source macPacketLossUl
+attr title "Mac Packet Loss Ul, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.mac macCellPacketLossUl:mean -nan
+attr source macCellPacketLossUl
+attr title "Mac Cell Packet Loss Ul, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.mac macCellPacketLossDl:mean -nan
+attr source macCellPacketLossDl
+attr title "Mac Cell Packet Loss Dl, mean"
+attr unit ""
+scalar Highway2.car[0].lteNic.mac macCellThroughputDl:mean -nan
+attr source macCellThroughputDl
+attr title "Cell Throughput at the MAC layer DL, mean"
+attr unit Bps
+scalar Highway2.car[0].lteNic.mac macCellThroughputUl:mean -nan
+attr source macCellThroughputUl
+attr title "Cell Throughput at the MAC layer UL, mean"
+attr unit Bps
+scalar Highway2.car[0].lteNic.mac macThroughputUl:mean 0.55385826699481
+attr source macThroughputUl
+attr title "Throughput at the MAC layer UL, mean"
+attr unit Bps
+scalar Highway2.car[0].lteNic.mac macDelayUl:mean 20.406666666667
+attr source macDelayUl
+attr title "Delay at the MAC layer UL, mean"
+attr unit s
+scalar Highway2.car[0].lteNic.mac macThroughputDl:mean 4.7779691397332
+attr source macThroughputDl
+attr title "Throughput at the MAC layer DL, mean"
+attr unit Bps
+scalar Highway2.car[0].lteNic.mac macDelayDl:mean -nan
+attr source macDelayDl
+attr title "Delay at the MAC layer UL, mean"
+attr unit s
+scalar Highway2.car[0].lteNic.mac sentPacketToLowerLayer:count 11697
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.car[0].lteNic.mac sentPacketToLowerLayer:sum(packetBytes) 832
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.car[0].lteNic.mac sentPacketToUpperLayer:count 8
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.car[0].lteNic.mac sentPacketToUpperLayer:sum(packetBytes) 90
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.car[0].lteNic.mac receivedPacketFromLowerLayer:count 11715
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.car[0].lteNic.mac receivedPacketFromLowerLayer:sum(packetBytes) 927
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.car[0].lteNic.mac receivedPacketFromUpperLayer:count 11
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.car[0].lteNic.mac receivedPacketFromUpperLayer:sum(packetBytes) 460
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.car[0].lteNic.phy averageCqiUl:mean 2
+attr source averageCqiUl
+attr title "Average Cqi reported in UL, mean"
+attr unit cqi
+scalar Highway2.car[0].lteNic.phy averageCqiDl:mean 2
+attr source averageCqiDl
+attr title "Average Cqi reported in DL, mean"
+attr unit cqi
+scalar Highway2.car[0].lteNic.channelModel rcvdSinr:mean 14.866119750741
+attr source rcvdSinr
+attr title "SINR measured at packet reception, mean"
+attr unit dB
+scalar Highway2.car[0].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar Highway2.car[0].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar Highway2.car[0].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar Highway2.car[0].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar Highway2.car[0].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar Highway2.veinsManager roiArea 0
+scalar Highway2.server.networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar Highway2.server.networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar Highway2.server.networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar Highway2.server.networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar Highway2.server.networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar Highway2.server.lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar Highway2.server.lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar Highway2.server.lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Highway2.server.lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Highway2.server.lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Highway2.server.lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+statistic Highway2.server.ppp[0].queue queueingTime:histogram
+field count 6
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	6
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Highway2.server.ppp[0].queue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar Highway2.server.ppp[0].queue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar Highway2.server.ppp[0].queue queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar Highway2.server.ppp[0].queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar Highway2.server.ppp[0].queue rcvdPk:count 6
+attr interpolationmode none
+attr title "received packets, count"
+scalar Highway2.server.ppp[0].queue rcvdPk:sum(packetBytes) 260
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar Highway2.server.ppp[0].ppp txState:timeavg 3.02e-10
+attr interpolationmode sample-hold
+attr title "tx state, timeavg"
+scalar Highway2.server.ppp[0].ppp droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar Highway2.server.ppp[0].ppp droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar Highway2.server.ppp[0].ppp droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar Highway2.server.ppp[0].ppp droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar Highway2.server.ppp[0].ppp rxPkOk:count 1
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar Highway2.server.ppp[0].ppp rxPkOk:sum(packetBytes) 51
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar Highway2.server.ppp[0].ppp txPk:count 6
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar Highway2.server.ppp[0].ppp txPk:sum(packetBytes) 302
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar Highway2.server.ppp[0].ppp rcvdPkFromHL:count 6
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Highway2.server.ppp[0].ppp rcvdPkFromHL:sum(packetBytes) 260
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Highway2.server.ppp[0].ppp passedUpPk:count 1
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Highway2.server.ppp[0].ppp passedUpPk:sum(packetBytes) 44
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar Highway2.server.tcpApp[0] bytesRcvd 0
+scalar Highway2.server.tcpApp[0] bytesSent 0
+scalar Highway2.server.tcpApp[0] rcvdPk:count 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, count"
+scalar Highway2.server.tcpApp[0] rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, sum(packetBytes)"
+statistic Highway2.server.tcpApp[0] endToEndDelay:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source messageAge(rcvdPk)
+attr title "end-to-end delay, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar Highway2.server.tcpApp[0] sentPk:count 0
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, count"
+scalar Highway2.server.tcpApp[0] sentPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, sum(packetBytes)"
+scalar Highway2.router.networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar Highway2.router.networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar Highway2.router.networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar Highway2.router.networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar Highway2.router.networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar Highway2.router.lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar Highway2.router.lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar Highway2.router.lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Highway2.router.lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Highway2.router.lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Highway2.router.lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+statistic Highway2.router.ppp[0].queue queueingTime:histogram
+field count 1
+field mean 0
+field stddev -nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Highway2.router.ppp[0].queue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar Highway2.router.ppp[0].queue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar Highway2.router.ppp[0].queue queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar Highway2.router.ppp[0].queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar Highway2.router.ppp[0].queue rcvdPk:count 1
+attr interpolationmode none
+attr title "received packets, count"
+scalar Highway2.router.ppp[0].queue rcvdPk:sum(packetBytes) 44
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar Highway2.router.ppp[0].ppp txState:timeavg 5.1e-11
+attr interpolationmode sample-hold
+attr title "tx state, timeavg"
+scalar Highway2.router.ppp[0].ppp droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar Highway2.router.ppp[0].ppp droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar Highway2.router.ppp[0].ppp droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar Highway2.router.ppp[0].ppp droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar Highway2.router.ppp[0].ppp rxPkOk:count 6
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar Highway2.router.ppp[0].ppp rxPkOk:sum(packetBytes) 302
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar Highway2.router.ppp[0].ppp txPk:count 1
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar Highway2.router.ppp[0].ppp txPk:sum(packetBytes) 51
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar Highway2.router.ppp[0].ppp rcvdPkFromHL:count 1
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Highway2.router.ppp[0].ppp rcvdPkFromHL:sum(packetBytes) 44
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Highway2.router.ppp[0].ppp passedUpPk:count 6
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Highway2.router.ppp[0].ppp passedUpPk:sum(packetBytes) 260
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+statistic Highway2.router.ppp[1].queue queueingTime:histogram
+field count 6
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	6
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Highway2.router.ppp[1].queue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar Highway2.router.ppp[1].queue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar Highway2.router.ppp[1].queue queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar Highway2.router.ppp[1].queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar Highway2.router.ppp[1].queue rcvdPk:count 6
+attr interpolationmode none
+attr title "received packets, count"
+scalar Highway2.router.ppp[1].queue rcvdPk:sum(packetBytes) 260
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar Highway2.router.ppp[1].ppp txState:timeavg 3.02e-10
+attr interpolationmode sample-hold
+attr title "tx state, timeavg"
+scalar Highway2.router.ppp[1].ppp droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar Highway2.router.ppp[1].ppp droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar Highway2.router.ppp[1].ppp droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar Highway2.router.ppp[1].ppp droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar Highway2.router.ppp[1].ppp rxPkOk:count 1
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar Highway2.router.ppp[1].ppp rxPkOk:sum(packetBytes) 51
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar Highway2.router.ppp[1].ppp txPk:count 6
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar Highway2.router.ppp[1].ppp txPk:sum(packetBytes) 302
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar Highway2.router.ppp[1].ppp rcvdPkFromHL:count 6
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Highway2.router.ppp[1].ppp rcvdPkFromHL:sum(packetBytes) 260
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Highway2.router.ppp[1].ppp passedUpPk:count 1
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Highway2.router.ppp[1].ppp passedUpPk:sum(packetBytes) 44
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar Highway2.pgw.networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar Highway2.pgw.networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar Highway2.pgw.networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar Highway2.pgw.networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar Highway2.pgw.networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar Highway2.pgw.lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar Highway2.pgw.lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar Highway2.pgw.lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Highway2.pgw.lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Highway2.pgw.lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Highway2.pgw.lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+statistic Highway2.pgw.ppp[0].queue queueingTime:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar Highway2.pgw.ppp[0].queue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar Highway2.pgw.ppp[0].queue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar Highway2.pgw.ppp[0].queue queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar Highway2.pgw.ppp[0].queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar Highway2.pgw.ppp[0].queue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar Highway2.pgw.ppp[0].queue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar Highway2.pgw.ppp[0].ppp txState:timeavg 0
+attr interpolationmode sample-hold
+attr title "tx state, timeavg"
+scalar Highway2.pgw.ppp[0].ppp droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar Highway2.pgw.ppp[0].ppp droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar Highway2.pgw.ppp[0].ppp droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar Highway2.pgw.ppp[0].ppp droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar Highway2.pgw.ppp[0].ppp rxPkOk:count 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar Highway2.pgw.ppp[0].ppp rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar Highway2.pgw.ppp[0].ppp txPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar Highway2.pgw.ppp[0].ppp txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar Highway2.pgw.ppp[0].ppp rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Highway2.pgw.ppp[0].ppp rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Highway2.pgw.ppp[0].ppp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Highway2.pgw.ppp[0].ppp passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+statistic Highway2.pgw.ppp[1].queue queueingTime:histogram
+field count 6
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	6
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Highway2.pgw.ppp[1].queue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar Highway2.pgw.ppp[1].queue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar Highway2.pgw.ppp[1].queue queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar Highway2.pgw.ppp[1].queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar Highway2.pgw.ppp[1].queue rcvdPk:count 6
+attr interpolationmode none
+attr title "received packets, count"
+scalar Highway2.pgw.ppp[1].queue rcvdPk:sum(packetBytes) 428
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar Highway2.pgw.ppp[1].ppp txState:timeavg 4.7e-10
+attr interpolationmode sample-hold
+attr title "tx state, timeavg"
+scalar Highway2.pgw.ppp[1].ppp droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar Highway2.pgw.ppp[1].ppp droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar Highway2.pgw.ppp[1].ppp droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar Highway2.pgw.ppp[1].ppp droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar Highway2.pgw.ppp[1].ppp rxPkOk:count 1
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar Highway2.pgw.ppp[1].ppp rxPkOk:sum(packetBytes) 79
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar Highway2.pgw.ppp[1].ppp txPk:count 6
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar Highway2.pgw.ppp[1].ppp txPk:sum(packetBytes) 470
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar Highway2.pgw.ppp[1].ppp rcvdPkFromHL:count 6
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Highway2.pgw.ppp[1].ppp rcvdPkFromHL:sum(packetBytes) 428
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Highway2.pgw.ppp[1].ppp passedUpPk:count 1
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Highway2.pgw.ppp[1].ppp passedUpPk:sum(packetBytes) 72
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+statistic Highway2.pgw.ppp[2].queue queueingTime:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar Highway2.pgw.ppp[2].queue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar Highway2.pgw.ppp[2].queue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar Highway2.pgw.ppp[2].queue queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar Highway2.pgw.ppp[2].queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar Highway2.pgw.ppp[2].queue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar Highway2.pgw.ppp[2].queue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar Highway2.pgw.ppp[2].ppp txState:timeavg 0
+attr interpolationmode sample-hold
+attr title "tx state, timeavg"
+scalar Highway2.pgw.ppp[2].ppp droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar Highway2.pgw.ppp[2].ppp droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar Highway2.pgw.ppp[2].ppp droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar Highway2.pgw.ppp[2].ppp droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar Highway2.pgw.ppp[2].ppp rxPkOk:count 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar Highway2.pgw.ppp[2].ppp rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar Highway2.pgw.ppp[2].ppp txPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar Highway2.pgw.ppp[2].ppp txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar Highway2.pgw.ppp[2].ppp rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Highway2.pgw.ppp[2].ppp rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Highway2.pgw.ppp[2].ppp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Highway2.pgw.ppp[2].ppp passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+statistic Highway2.pgw.pppInterface.queue queueingTime:histogram
+field count 1
+field mean 0
+field stddev -nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Highway2.pgw.pppInterface.queue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar Highway2.pgw.pppInterface.queue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar Highway2.pgw.pppInterface.queue queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar Highway2.pgw.pppInterface.queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar Highway2.pgw.pppInterface.queue rcvdPk:count 1
+attr interpolationmode none
+attr title "received packets, count"
+scalar Highway2.pgw.pppInterface.queue rcvdPk:sum(packetBytes) 44
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar Highway2.pgw.pppInterface.ppp txState:timeavg 5.1e-11
+attr interpolationmode sample-hold
+attr title "tx state, timeavg"
+scalar Highway2.pgw.pppInterface.ppp droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar Highway2.pgw.pppInterface.ppp droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar Highway2.pgw.pppInterface.ppp droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar Highway2.pgw.pppInterface.ppp droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar Highway2.pgw.pppInterface.ppp rxPkOk:count 6
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar Highway2.pgw.pppInterface.ppp rxPkOk:sum(packetBytes) 302
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar Highway2.pgw.pppInterface.ppp txPk:count 1
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar Highway2.pgw.pppInterface.ppp txPk:sum(packetBytes) 51
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar Highway2.pgw.pppInterface.ppp rcvdPkFromHL:count 1
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Highway2.pgw.pppInterface.ppp rcvdPkFromHL:sum(packetBytes) 44
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Highway2.pgw.pppInterface.ppp passedUpPk:count 6
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Highway2.pgw.pppInterface.ppp passedUpPk:sum(packetBytes) 260
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar Highway2.pgw.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr title "packets dropped (checksum error), count"
+scalar Highway2.pgw.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr title "packets dropped (wrong port), count"
+scalar Highway2.pgw.udp passedUpPk:count 1
+attr interpolationmode none
+attr title "packets passed up, count"
+scalar Highway2.pgw.udp rcvdPk:count 1
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, count"
+scalar Highway2.pgw.udp rcvdPk:sum(packetBytes) 52
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, sum(packetBytes)"
+scalar Highway2.pgw.udp sentPk:count 6
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, count"
+scalar Highway2.pgw.udp sentPk:sum(packetBytes) 308
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, sum(packetBytes)"
+scalar Highway2.eNodeB1.lteNic.pdcpRrc sentPacketToLowerLayer:count 0
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.eNodeB1.lteNic.pdcpRrc sentPacketToLowerLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.eNodeB1.lteNic.pdcpRrc sentPacketToUpperLayer:count 0
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.eNodeB1.lteNic.pdcpRrc sentPacketToUpperLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.eNodeB1.lteNic.pdcpRrc receivedPacketFromLowerLayer:count 0
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.eNodeB1.lteNic.pdcpRrc receivedPacketFromLowerLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.eNodeB1.lteNic.pdcpRrc receivedPacketFromUpperLayer:count 0
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.eNodeB1.lteNic.pdcpRrc receivedPacketFromUpperLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.eNodeB1.lteNic.rlc.um rlcPduPacketLossDl:mean -nan
+attr source rlcPduPacketLossDl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.rlc.um rlcPduPacketLossUl:mean -nan
+attr source rlcPduPacketLossUl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.rlc.um rlcPduThroughputUl:mean -nan
+attr source rlcPduThroughputUl
+attr title "Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.eNodeB1.lteNic.rlc.um rlcPduDelayUl:mean -nan
+attr source rlcPduDelayUl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB1.lteNic.rlc.um rlcPduThroughputDl:mean -nan
+attr source rlcPduThroughputDl
+attr title "Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.eNodeB1.lteNic.rlc.um rlcPduDelayDl:mean -nan
+attr source rlcPduDelayDl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB1.lteNic.rlc.um rlcCellPacketLossUl:mean -nan
+attr source rlcCellPacketLossUl
+attr title "rlc Cell Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.rlc.um rlcCellPacketLossDl:mean -nan
+attr source rlcCellPacketLossDl
+attr title "rlc Cell Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.rlc.um rlcCellThroughputDl:mean -nan
+attr source rlcCellThroughputDl
+attr title "Cell Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.eNodeB1.lteNic.rlc.um rlcCellThroughputUl:mean -nan
+attr source rlcCellThroughputUl
+attr title "Cell Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.eNodeB1.lteNic.rlc.um rlcPacketLossTotal:mean -nan
+attr source rlcPacketLossTotal
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.rlc.um rlcPacketLossDl:mean -nan
+attr source rlcPacketLossDl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.rlc.um rlcPacketLossUl:mean -nan
+attr source rlcPacketLossUl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.rlc.um rlcThroughputUl:mean -nan
+attr source rlcThroughputUl
+attr title "Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.eNodeB1.lteNic.rlc.um rlcDelayUl:mean -nan
+attr source rlcDelayUl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB1.lteNic.rlc.um rlcThroughputDl:mean -nan
+attr source rlcThroughputDl
+attr title "Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.eNodeB1.lteNic.rlc.um rlcDelayDl:mean -nan
+attr source rlcDelayDl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB1.lteNic.rlc.um sentPacketToLowerLayer:count 0
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.eNodeB1.lteNic.rlc.um sentPacketToLowerLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.eNodeB1.lteNic.rlc.um sentPacketToUpperLayer:count 0
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.eNodeB1.lteNic.rlc.um sentPacketToUpperLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.eNodeB1.lteNic.rlc.um receivedPacketFromLowerLayer:count 0
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.eNodeB1.lteNic.rlc.um receivedPacketFromLowerLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.eNodeB1.lteNic.rlc.um receivedPacketFromUpperLayer:count 0
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.eNodeB1.lteNic.rlc.um receivedPacketFromUpperLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.eNodeB1.lteNic.rlc.am rlcPduPacketLossDl:mean -nan
+attr source rlcPduPacketLossDl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.rlc.am rlcPduPacketLossUl:mean -nan
+attr source rlcPduPacketLossUl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.rlc.am rlcPduThroughputUl:mean -nan
+attr source rlcPduThroughputUl
+attr title "Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.eNodeB1.lteNic.rlc.am rlcPduDelayUl:mean -nan
+attr source rlcPduDelayUl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB1.lteNic.rlc.am rlcPduThroughputDl:mean -nan
+attr source rlcPduThroughputDl
+attr title "Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.eNodeB1.lteNic.rlc.am rlcPduDelayDl:mean -nan
+attr source rlcPduDelayDl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB1.lteNic.rlc.am rlcCellPacketLossUl:mean -nan
+attr source rlcCellPacketLossUl
+attr title "rlc Cell Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.rlc.am rlcCellPacketLossDl:mean -nan
+attr source rlcCellPacketLossDl
+attr title "rlc Cell Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.rlc.am rlcCellThroughputDl:mean -nan
+attr source rlcCellThroughputDl
+attr title "Cell Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.eNodeB1.lteNic.rlc.am rlcCellThroughputUl:mean -nan
+attr source rlcCellThroughputUl
+attr title "Cell Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.eNodeB1.lteNic.rlc.am rlcPacketLossTotal:mean -nan
+attr source rlcPacketLossTotal
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.rlc.am rlcPacketLossDl:mean -nan
+attr source rlcPacketLossDl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.rlc.am rlcPacketLossUl:mean -nan
+attr source rlcPacketLossUl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.rlc.am rlcThroughputUl:mean -nan
+attr source rlcThroughputUl
+attr title "Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.eNodeB1.lteNic.rlc.am rlcDelayUl:mean -nan
+attr source rlcDelayUl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB1.lteNic.rlc.am rlcThroughputDl:mean -nan
+attr source rlcThroughputDl
+attr title "Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.eNodeB1.lteNic.rlc.am rlcDelayDl:mean -nan
+attr source rlcDelayDl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB1.lteNic.mac avgServedBlocksUl:mean 0
+attr source avgServedBlocksUl
+attr title "LTE Avg Served Blocks Ul, mean"
+attr unit blocks
+scalar Highway2.eNodeB1.lteNic.mac avgServedBlocksDl:mean 0
+attr source avgServedBlocksDl
+attr title "LTE Avg Served Blocks Dl, mean"
+attr unit blocks
+scalar Highway2.eNodeB1.lteNic.mac cellBlocksUtilizationUl:mean 0
+attr source cellBlocksUtilizationUl
+attr title "LTE Cell Blocks Utilization Ul, mean"
+attr unit blocks
+scalar Highway2.eNodeB1.lteNic.mac cellBlocksUtilizationDl:mean 0
+attr source cellBlocksUtilizationDl
+attr title "LTE Cell Blocks Utilization Dl, mean"
+attr unit blocks
+scalar Highway2.eNodeB1.lteNic.mac measuredItbs:mean -nan
+attr source measuredItbs
+attr title "TBS index, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.mac harqErrorRate_4th_Dl:mean -nan
+attr source harqErrorRate_4th_Dl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.mac harqErrorRate_4th_Ul:mean -nan
+attr source harqErrorRate_4th_Ul
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.mac harqErrorRate_3rd_Dl:mean -nan
+attr source harqErrorRate_3rd_Dl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.mac harqErrorRate_3rd_Ul:mean -nan
+attr source harqErrorRate_3rd_Ul
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.mac harqErrorRate_2nd_Dl:mean -nan
+attr source harqErrorRate_2nd_Dl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.mac harqErrorRate_2nd_Ul:mean -nan
+attr source harqErrorRate_2nd_Ul
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.mac harqErrorRate_1st_Dl:mean -nan
+attr source harqErrorRate_1st_Dl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.mac harqErrorRate_1st_Ul:mean -nan
+attr source harqErrorRate_1st_Ul
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.mac harqErrorRateDl:mean -nan
+attr source harqErrorRateDl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.mac harqErrorRateUl:mean -nan
+attr source harqErrorRateUl
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.mac macBufferOverFlowD2D:mean -nan
+attr source macBufferOverFlowD2D
+attr title "Mac buffer overflow as function of time, mean"
+attr unit Byte/s
+scalar Highway2.eNodeB1.lteNic.mac macBufferOverFlowUl:mean -nan
+attr source macBufferOverFlowUl
+attr title "Mac buffer overflow as function of time, mean"
+attr unit Byte/s
+scalar Highway2.eNodeB1.lteNic.mac macBufferOverFlowDl:mean -nan
+attr source macBufferOverFlowDl
+attr title "Mac buffer overflow as function of time, mean"
+attr unit Byte/s
+scalar Highway2.eNodeB1.lteNic.mac macPacketLossDl:mean -nan
+attr source macPacketLossDl
+attr title "Mac Packet Loss Dl, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.mac macPacketLossUl:mean -nan
+attr source macPacketLossUl
+attr title "Mac Packet Loss Ul, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.mac macCellPacketLossUl:mean -nan
+attr source macCellPacketLossUl
+attr title "Mac Cell Packet Loss Ul, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.mac macCellPacketLossDl:mean -nan
+attr source macCellPacketLossDl
+attr title "Mac Cell Packet Loss Dl, mean"
+attr unit ""
+scalar Highway2.eNodeB1.lteNic.mac macCellThroughputDl:mean -nan
+attr source macCellThroughputDl
+attr title "Cell Throughput at the MAC layer DL, mean"
+attr unit Bps
+scalar Highway2.eNodeB1.lteNic.mac macCellThroughputUl:mean -nan
+attr source macCellThroughputUl
+attr title "Cell Throughput at the MAC layer UL, mean"
+attr unit Bps
+scalar Highway2.eNodeB1.lteNic.mac macThroughputUl:mean -nan
+attr source macThroughputUl
+attr title "Throughput at the MAC layer UL, mean"
+attr unit Bps
+scalar Highway2.eNodeB1.lteNic.mac macDelayUl:mean -nan
+attr source macDelayUl
+attr title "Delay at the MAC layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB1.lteNic.mac macThroughputDl:mean -nan
+attr source macThroughputDl
+attr title "Throughput at the MAC layer DL, mean"
+attr unit Bps
+scalar Highway2.eNodeB1.lteNic.mac macDelayDl:mean -nan
+attr source macDelayDl
+attr title "Delay at the MAC layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB1.lteNic.mac sentPacketToLowerLayer:count 0
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.eNodeB1.lteNic.mac sentPacketToLowerLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.eNodeB1.lteNic.mac sentPacketToUpperLayer:count 0
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.eNodeB1.lteNic.mac sentPacketToUpperLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.eNodeB1.lteNic.mac receivedPacketFromLowerLayer:count 55058
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.eNodeB1.lteNic.mac receivedPacketFromLowerLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.eNodeB1.lteNic.mac receivedPacketFromUpperLayer:count 0
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.eNodeB1.lteNic.mac receivedPacketFromUpperLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.eNodeB1.lteNic.channelModel rcvdSinr:mean -nan
+attr source rcvdSinr
+attr title "SINR measured at packet reception, mean"
+attr unit dB
+statistic Highway2.eNodeB1.pppIf.queue queueingTime:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar Highway2.eNodeB1.pppIf.queue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar Highway2.eNodeB1.pppIf.queue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar Highway2.eNodeB1.pppIf.queue queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar Highway2.eNodeB1.pppIf.queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar Highway2.eNodeB1.pppIf.queue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar Highway2.eNodeB1.pppIf.queue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar Highway2.eNodeB1.pppIf.ppp txState:timeavg 0
+attr interpolationmode sample-hold
+attr title "tx state, timeavg"
+scalar Highway2.eNodeB1.pppIf.ppp droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar Highway2.eNodeB1.pppIf.ppp droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar Highway2.eNodeB1.pppIf.ppp droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar Highway2.eNodeB1.pppIf.ppp droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar Highway2.eNodeB1.pppIf.ppp rxPkOk:count 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar Highway2.eNodeB1.pppIf.ppp rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar Highway2.eNodeB1.pppIf.ppp txPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar Highway2.eNodeB1.pppIf.ppp txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar Highway2.eNodeB1.pppIf.ppp rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Highway2.eNodeB1.pppIf.ppp rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Highway2.eNodeB1.pppIf.ppp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Highway2.eNodeB1.pppIf.ppp passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+statistic Highway2.eNodeB1.x2ppp[0].queue queueingTime:histogram
+field count 9
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	9
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Highway2.eNodeB1.x2ppp[0].queue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar Highway2.eNodeB1.x2ppp[0].queue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar Highway2.eNodeB1.x2ppp[0].queue queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar Highway2.eNodeB1.x2ppp[0].queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar Highway2.eNodeB1.x2ppp[0].queue rcvdPk:count 9
+attr interpolationmode none
+attr title "received packets, count"
+scalar Highway2.eNodeB1.x2ppp[0].queue rcvdPk:sum(packetBytes) 660
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar Highway2.eNodeB1.x2ppp[0].ppp txState:timeavg 7.23e-10
+attr interpolationmode sample-hold
+attr title "tx state, timeavg"
+scalar Highway2.eNodeB1.x2ppp[0].ppp droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar Highway2.eNodeB1.x2ppp[0].ppp droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar Highway2.eNodeB1.x2ppp[0].ppp droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar Highway2.eNodeB1.x2ppp[0].ppp droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar Highway2.eNodeB1.x2ppp[0].ppp rxPkOk:count 9
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar Highway2.eNodeB1.x2ppp[0].ppp rxPkOk:sum(packetBytes) 719
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar Highway2.eNodeB1.x2ppp[0].ppp txPk:count 9
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar Highway2.eNodeB1.x2ppp[0].ppp txPk:sum(packetBytes) 723
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar Highway2.eNodeB1.x2ppp[0].ppp rcvdPkFromHL:count 9
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Highway2.eNodeB1.x2ppp[0].ppp rcvdPkFromHL:sum(packetBytes) 660
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Highway2.eNodeB1.x2ppp[0].ppp passedUpPk:count 9
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Highway2.eNodeB1.x2ppp[0].ppp passedUpPk:sum(packetBytes) 656
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar Highway2.eNodeB1.networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar Highway2.eNodeB1.networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar Highway2.eNodeB1.networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar Highway2.eNodeB1.networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar Highway2.eNodeB1.networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar Highway2.eNodeB1.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr title "packets dropped (checksum error), count"
+scalar Highway2.eNodeB1.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr title "packets dropped (wrong port), count"
+scalar Highway2.eNodeB1.udp passedUpPk:count 0
+attr interpolationmode none
+attr title "packets passed up, count"
+scalar Highway2.eNodeB1.udp rcvdPk:count 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, count"
+scalar Highway2.eNodeB1.udp rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, sum(packetBytes)"
+scalar Highway2.eNodeB1.udp sentPk:count 0
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, count"
+scalar Highway2.eNodeB1.udp sentPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, sum(packetBytes)"
+scalar Highway2.eNodeB1.x2App[0].client echoedPk:count 0
+attr interpolationmode none
+attr source echoedPk
+attr title "packets echoed, count"
+scalar Highway2.eNodeB1.x2App[0].client echoedPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source echoedPk
+attr title "packets echoed, sum(packetBytes)"
+scalar Highway2.eNodeB1.x2App[0].client rcvdPk:count 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, count"
+scalar Highway2.eNodeB1.x2App[0].client rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, sum(packetBytes)"
+scalar Highway2.eNodeB1.x2App[0].client sentPk:count 0
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, count"
+scalar Highway2.eNodeB1.x2App[0].client sentPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, sum(packetBytes)"
+scalar Highway2.eNodeB1.x2App[0].server "bytes rcvd" 0
+scalar Highway2.eNodeB1.x2App[0].server throughput -nan
+scalar Highway2.eNodeB2.lteNic.pdcpRrc sentPacketToLowerLayer:count 6
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.eNodeB2.lteNic.pdcpRrc sentPacketToLowerLayer:sum(packetBytes) 266
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.eNodeB2.lteNic.pdcpRrc sentPacketToUpperLayer:count 1
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.eNodeB2.lteNic.pdcpRrc sentPacketToUpperLayer:sum(packetBytes) 44
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.eNodeB2.lteNic.pdcpRrc receivedPacketFromLowerLayer:count 1
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.eNodeB2.lteNic.pdcpRrc receivedPacketFromLowerLayer:sum(packetBytes) 45
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.eNodeB2.lteNic.pdcpRrc receivedPacketFromUpperLayer:count 6
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.eNodeB2.lteNic.pdcpRrc receivedPacketFromUpperLayer:sum(packetBytes) 260
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.eNodeB2.lteNic.rlc.um rlcPduPacketLossDl:mean -nan
+attr source rlcPduPacketLossDl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.rlc.um rlcPduPacketLossUl:mean -nan
+attr source rlcPduPacketLossUl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.rlc.um rlcPduThroughputUl:mean -nan
+attr source rlcPduThroughputUl
+attr title "Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.eNodeB2.lteNic.rlc.um rlcPduDelayUl:mean -nan
+attr source rlcPduDelayUl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB2.lteNic.rlc.um rlcPduThroughputDl:mean -nan
+attr source rlcPduThroughputDl
+attr title "Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.eNodeB2.lteNic.rlc.um rlcPduDelayDl:mean -nan
+attr source rlcPduDelayDl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB2.lteNic.rlc.um rlcCellPacketLossUl:mean 0.66666666666667
+attr source rlcCellPacketLossUl
+attr title "rlc Cell Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.rlc.um rlcCellPacketLossDl:mean 0.66666666666667
+attr source rlcCellPacketLossDl
+attr title "rlc Cell Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.rlc.um rlcCellThroughputDl:mean 4.6128650146621
+attr source rlcCellThroughputDl
+attr title "Cell Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.eNodeB2.lteNic.rlc.um rlcCellThroughputUl:mean 0.94125521612266
+attr source rlcCellThroughputUl
+attr title "Cell Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.eNodeB2.lteNic.rlc.um rlcPacketLossTotal:mean -nan
+attr source rlcPacketLossTotal
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.rlc.um rlcPacketLossDl:mean -nan
+attr source rlcPacketLossDl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.rlc.um rlcPacketLossUl:mean -nan
+attr source rlcPacketLossUl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.rlc.um rlcThroughputUl:mean -nan
+attr source rlcThroughputUl
+attr title "Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.eNodeB2.lteNic.rlc.um rlcDelayUl:mean -nan
+attr source rlcDelayUl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB2.lteNic.rlc.um rlcThroughputDl:mean -nan
+attr source rlcThroughputDl
+attr title "Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.eNodeB2.lteNic.rlc.um rlcDelayDl:mean -nan
+attr source rlcDelayDl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB2.lteNic.rlc.um sentPacketToLowerLayer:count 6
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.eNodeB2.lteNic.rlc.um sentPacketToLowerLayer:sum(packetBytes) 278
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.eNodeB2.lteNic.rlc.um sentPacketToUpperLayer:count 1
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.eNodeB2.lteNic.rlc.um sentPacketToUpperLayer:sum(packetBytes) 45
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.eNodeB2.lteNic.rlc.um receivedPacketFromLowerLayer:count 2
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.eNodeB2.lteNic.rlc.um receivedPacketFromLowerLayer:sum(packetBytes) 96
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.eNodeB2.lteNic.rlc.um receivedPacketFromUpperLayer:count 6
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.eNodeB2.lteNic.rlc.um receivedPacketFromUpperLayer:sum(packetBytes) 266
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.eNodeB2.lteNic.rlc.am rlcPduPacketLossDl:mean -nan
+attr source rlcPduPacketLossDl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.rlc.am rlcPduPacketLossUl:mean -nan
+attr source rlcPduPacketLossUl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.rlc.am rlcPduThroughputUl:mean -nan
+attr source rlcPduThroughputUl
+attr title "Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.eNodeB2.lteNic.rlc.am rlcPduDelayUl:mean -nan
+attr source rlcPduDelayUl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB2.lteNic.rlc.am rlcPduThroughputDl:mean -nan
+attr source rlcPduThroughputDl
+attr title "Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.eNodeB2.lteNic.rlc.am rlcPduDelayDl:mean -nan
+attr source rlcPduDelayDl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB2.lteNic.rlc.am rlcCellPacketLossUl:mean -nan
+attr source rlcCellPacketLossUl
+attr title "rlc Cell Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.rlc.am rlcCellPacketLossDl:mean -nan
+attr source rlcCellPacketLossDl
+attr title "rlc Cell Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.rlc.am rlcCellThroughputDl:mean -nan
+attr source rlcCellThroughputDl
+attr title "Cell Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.eNodeB2.lteNic.rlc.am rlcCellThroughputUl:mean -nan
+attr source rlcCellThroughputUl
+attr title "Cell Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.eNodeB2.lteNic.rlc.am rlcPacketLossTotal:mean -nan
+attr source rlcPacketLossTotal
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.rlc.am rlcPacketLossDl:mean -nan
+attr source rlcPacketLossDl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.rlc.am rlcPacketLossUl:mean -nan
+attr source rlcPacketLossUl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.rlc.am rlcThroughputUl:mean -nan
+attr source rlcThroughputUl
+attr title "Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.eNodeB2.lteNic.rlc.am rlcDelayUl:mean -nan
+attr source rlcDelayUl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB2.lteNic.rlc.am rlcThroughputDl:mean -nan
+attr source rlcThroughputDl
+attr title "Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.eNodeB2.lteNic.rlc.am rlcDelayDl:mean -nan
+attr source rlcDelayDl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB2.lteNic.mac avgServedBlocksUl:mean 0.00052375
+attr source avgServedBlocksUl
+attr title "LTE Avg Served Blocks Ul, mean"
+attr unit blocks
+scalar Highway2.eNodeB2.lteNic.mac avgServedBlocksDl:mean 0.00059125
+attr source avgServedBlocksDl
+attr title "LTE Avg Served Blocks Dl, mean"
+attr unit blocks
+scalar Highway2.eNodeB2.lteNic.mac cellBlocksUtilizationUl:mean 2.095e-05
+attr source cellBlocksUtilizationUl
+attr title "LTE Cell Blocks Utilization Ul, mean"
+attr unit blocks
+scalar Highway2.eNodeB2.lteNic.mac cellBlocksUtilizationDl:mean 2.365e-05
+attr source cellBlocksUtilizationDl
+attr title "LTE Cell Blocks Utilization Dl, mean"
+attr unit blocks
+scalar Highway2.eNodeB2.lteNic.mac measuredItbs:mean 0
+attr source measuredItbs
+attr title "TBS index, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.mac harqErrorRate_4th_Dl:mean -nan
+attr source harqErrorRate_4th_Dl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.mac harqErrorRate_4th_Ul:mean -nan
+attr source harqErrorRate_4th_Ul
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.mac harqErrorRate_3rd_Dl:mean -nan
+attr source harqErrorRate_3rd_Dl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.mac harqErrorRate_3rd_Ul:mean -nan
+attr source harqErrorRate_3rd_Ul
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.mac harqErrorRate_2nd_Dl:mean -nan
+attr source harqErrorRate_2nd_Dl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.mac harqErrorRate_2nd_Ul:mean -nan
+attr source harqErrorRate_2nd_Ul
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.mac harqErrorRate_1st_Dl:mean -nan
+attr source harqErrorRate_1st_Dl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.mac harqErrorRate_1st_Ul:mean -nan
+attr source harqErrorRate_1st_Ul
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.mac harqErrorRateDl:mean -nan
+attr source harqErrorRateDl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.mac harqErrorRateUl:mean -nan
+attr source harqErrorRateUl
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.mac macBufferOverFlowD2D:mean -nan
+attr source macBufferOverFlowD2D
+attr title "Mac buffer overflow as function of time, mean"
+attr unit Byte/s
+scalar Highway2.eNodeB2.lteNic.mac macBufferOverFlowUl:mean -nan
+attr source macBufferOverFlowUl
+attr title "Mac buffer overflow as function of time, mean"
+attr unit Byte/s
+scalar Highway2.eNodeB2.lteNic.mac macBufferOverFlowDl:mean -nan
+attr source macBufferOverFlowDl
+attr title "Mac buffer overflow as function of time, mean"
+attr unit Byte/s
+scalar Highway2.eNodeB2.lteNic.mac macPacketLossDl:mean -nan
+attr source macPacketLossDl
+attr title "Mac Packet Loss Dl, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.mac macPacketLossUl:mean -nan
+attr source macPacketLossUl
+attr title "Mac Packet Loss Ul, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.mac macCellPacketLossUl:mean 0.5
+attr source macCellPacketLossUl
+attr title "Mac Cell Packet Loss Ul, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.mac macCellPacketLossDl:mean 0.66666666666667
+attr source macCellPacketLossDl
+attr title "Mac Cell Packet Loss Dl, mean"
+attr unit ""
+scalar Highway2.eNodeB2.lteNic.mac macCellThroughputDl:mean 5.3075036684994
+attr source macCellThroughputDl
+attr title "Cell Throughput at the MAC layer DL, mean"
+attr unit Bps
+scalar Highway2.eNodeB2.lteNic.mac macCellThroughputUl:mean 1.1772733149697
+attr source macCellThroughputUl
+attr title "Cell Throughput at the MAC layer UL, mean"
+attr unit Bps
+scalar Highway2.eNodeB2.lteNic.mac macThroughputUl:mean -nan
+attr source macThroughputUl
+attr title "Throughput at the MAC layer UL, mean"
+attr unit Bps
+scalar Highway2.eNodeB2.lteNic.mac macDelayUl:mean -nan
+attr source macDelayUl
+attr title "Delay at the MAC layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB2.lteNic.mac macThroughputDl:mean -nan
+attr source macThroughputDl
+attr title "Throughput at the MAC layer DL, mean"
+attr unit Bps
+scalar Highway2.eNodeB2.lteNic.mac macDelayDl:mean 2.104
+attr source macDelayDl
+attr title "Delay at the MAC layer UL, mean"
+attr unit s
+scalar Highway2.eNodeB2.lteNic.mac sentPacketToLowerLayer:count 11715
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.eNodeB2.lteNic.mac sentPacketToLowerLayer:sum(packetBytes) 927
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.eNodeB2.lteNic.mac sentPacketToUpperLayer:count 8
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.eNodeB2.lteNic.mac sentPacketToUpperLayer:sum(packetBytes) 96
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.eNodeB2.lteNic.mac receivedPacketFromLowerLayer:count 68856
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.eNodeB2.lteNic.mac receivedPacketFromLowerLayer:sum(packetBytes) 832
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.eNodeB2.lteNic.mac receivedPacketFromUpperLayer:count 12
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.eNodeB2.lteNic.mac receivedPacketFromUpperLayer:sum(packetBytes) 544
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.eNodeB2.lteNic.channelModel rcvdSinr:mean 12.022613468383
+attr source rcvdSinr
+attr title "SINR measured at packet reception, mean"
+attr unit dB
+statistic Highway2.eNodeB2.pppIf.queue queueingTime:histogram
+field count 1
+field mean 0
+field stddev -nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Highway2.eNodeB2.pppIf.queue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar Highway2.eNodeB2.pppIf.queue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar Highway2.eNodeB2.pppIf.queue queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar Highway2.eNodeB2.pppIf.queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar Highway2.eNodeB2.pppIf.queue rcvdPk:count 1
+attr interpolationmode none
+attr title "received packets, count"
+scalar Highway2.eNodeB2.pppIf.queue rcvdPk:sum(packetBytes) 72
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar Highway2.eNodeB2.pppIf.ppp txState:timeavg 7.9e-11
+attr interpolationmode sample-hold
+attr title "tx state, timeavg"
+scalar Highway2.eNodeB2.pppIf.ppp droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar Highway2.eNodeB2.pppIf.ppp droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar Highway2.eNodeB2.pppIf.ppp droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar Highway2.eNodeB2.pppIf.ppp droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar Highway2.eNodeB2.pppIf.ppp rxPkOk:count 6
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar Highway2.eNodeB2.pppIf.ppp rxPkOk:sum(packetBytes) 470
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar Highway2.eNodeB2.pppIf.ppp txPk:count 1
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar Highway2.eNodeB2.pppIf.ppp txPk:sum(packetBytes) 79
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar Highway2.eNodeB2.pppIf.ppp rcvdPkFromHL:count 1
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Highway2.eNodeB2.pppIf.ppp rcvdPkFromHL:sum(packetBytes) 72
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Highway2.eNodeB2.pppIf.ppp passedUpPk:count 6
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Highway2.eNodeB2.pppIf.ppp passedUpPk:sum(packetBytes) 428
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+statistic Highway2.eNodeB2.x2ppp[0].queue queueingTime:histogram
+field count 9
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	9
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Highway2.eNodeB2.x2ppp[0].queue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar Highway2.eNodeB2.x2ppp[0].queue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar Highway2.eNodeB2.x2ppp[0].queue queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar Highway2.eNodeB2.x2ppp[0].queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar Highway2.eNodeB2.x2ppp[0].queue rcvdPk:count 9
+attr interpolationmode none
+attr title "received packets, count"
+scalar Highway2.eNodeB2.x2ppp[0].queue rcvdPk:sum(packetBytes) 660
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar Highway2.eNodeB2.x2ppp[0].ppp txState:timeavg 7.23e-10
+attr interpolationmode sample-hold
+attr title "tx state, timeavg"
+scalar Highway2.eNodeB2.x2ppp[0].ppp droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar Highway2.eNodeB2.x2ppp[0].ppp droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar Highway2.eNodeB2.x2ppp[0].ppp droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar Highway2.eNodeB2.x2ppp[0].ppp droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar Highway2.eNodeB2.x2ppp[0].ppp rxPkOk:count 9
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar Highway2.eNodeB2.x2ppp[0].ppp rxPkOk:sum(packetBytes) 719
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar Highway2.eNodeB2.x2ppp[0].ppp txPk:count 9
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar Highway2.eNodeB2.x2ppp[0].ppp txPk:sum(packetBytes) 723
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar Highway2.eNodeB2.x2ppp[0].ppp rcvdPkFromHL:count 9
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Highway2.eNodeB2.x2ppp[0].ppp rcvdPkFromHL:sum(packetBytes) 660
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Highway2.eNodeB2.x2ppp[0].ppp passedUpPk:count 9
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Highway2.eNodeB2.x2ppp[0].ppp passedUpPk:sum(packetBytes) 656
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar Highway2.eNodeB2.networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar Highway2.eNodeB2.networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar Highway2.eNodeB2.networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar Highway2.eNodeB2.networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar Highway2.eNodeB2.networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar Highway2.eNodeB2.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr title "packets dropped (checksum error), count"
+scalar Highway2.eNodeB2.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr title "packets dropped (wrong port), count"
+scalar Highway2.eNodeB2.udp passedUpPk:count 6
+attr interpolationmode none
+attr title "packets passed up, count"
+scalar Highway2.eNodeB2.udp rcvdPk:count 6
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, count"
+scalar Highway2.eNodeB2.udp rcvdPk:sum(packetBytes) 308
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, sum(packetBytes)"
+scalar Highway2.eNodeB2.udp sentPk:count 1
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, count"
+scalar Highway2.eNodeB2.udp sentPk:sum(packetBytes) 52
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, sum(packetBytes)"
+scalar Highway2.eNodeB2.x2App[0].client echoedPk:count 0
+attr interpolationmode none
+attr source echoedPk
+attr title "packets echoed, count"
+scalar Highway2.eNodeB2.x2App[0].client echoedPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source echoedPk
+attr title "packets echoed, sum(packetBytes)"
+scalar Highway2.eNodeB2.x2App[0].client rcvdPk:count 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, count"
+scalar Highway2.eNodeB2.x2App[0].client rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, sum(packetBytes)"
+scalar Highway2.eNodeB2.x2App[0].client sentPk:count 0
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, count"
+scalar Highway2.eNodeB2.x2App[0].client sentPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, sum(packetBytes)"
+scalar Highway2.eNodeB2.x2App[0].server "bytes rcvd" 0
+scalar Highway2.eNodeB2.x2App[0].server throughput -nan
+scalar Highway2.droneB1.lteNic.pdcpRrc sentPacketToLowerLayer:count 0
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.droneB1.lteNic.pdcpRrc sentPacketToLowerLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.droneB1.lteNic.pdcpRrc sentPacketToUpperLayer:count 0
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.droneB1.lteNic.pdcpRrc sentPacketToUpperLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.droneB1.lteNic.pdcpRrc receivedPacketFromLowerLayer:count 0
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.droneB1.lteNic.pdcpRrc receivedPacketFromLowerLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.droneB1.lteNic.pdcpRrc receivedPacketFromUpperLayer:count 0
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.droneB1.lteNic.pdcpRrc receivedPacketFromUpperLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.droneB1.lteNic.rlc.um rlcPduPacketLossDl:mean -nan
+attr source rlcPduPacketLossDl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.rlc.um rlcPduPacketLossUl:mean -nan
+attr source rlcPduPacketLossUl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.rlc.um rlcPduThroughputUl:mean -nan
+attr source rlcPduThroughputUl
+attr title "Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.droneB1.lteNic.rlc.um rlcPduDelayUl:mean -nan
+attr source rlcPduDelayUl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.droneB1.lteNic.rlc.um rlcPduThroughputDl:mean -nan
+attr source rlcPduThroughputDl
+attr title "Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.droneB1.lteNic.rlc.um rlcPduDelayDl:mean -nan
+attr source rlcPduDelayDl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.droneB1.lteNic.rlc.um rlcCellPacketLossUl:mean -nan
+attr source rlcCellPacketLossUl
+attr title "rlc Cell Packet Loss, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.rlc.um rlcCellPacketLossDl:mean -nan
+attr source rlcCellPacketLossDl
+attr title "rlc Cell Packet Loss, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.rlc.um rlcCellThroughputDl:mean -nan
+attr source rlcCellThroughputDl
+attr title "Cell Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.droneB1.lteNic.rlc.um rlcCellThroughputUl:mean -nan
+attr source rlcCellThroughputUl
+attr title "Cell Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.droneB1.lteNic.rlc.um rlcPacketLossTotal:mean -nan
+attr source rlcPacketLossTotal
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.rlc.um rlcPacketLossDl:mean -nan
+attr source rlcPacketLossDl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.rlc.um rlcPacketLossUl:mean -nan
+attr source rlcPacketLossUl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.rlc.um rlcThroughputUl:mean -nan
+attr source rlcThroughputUl
+attr title "Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.droneB1.lteNic.rlc.um rlcDelayUl:mean -nan
+attr source rlcDelayUl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.droneB1.lteNic.rlc.um rlcThroughputDl:mean -nan
+attr source rlcThroughputDl
+attr title "Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.droneB1.lteNic.rlc.um rlcDelayDl:mean -nan
+attr source rlcDelayDl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.droneB1.lteNic.rlc.um sentPacketToLowerLayer:count 0
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.droneB1.lteNic.rlc.um sentPacketToLowerLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.droneB1.lteNic.rlc.um sentPacketToUpperLayer:count 0
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.droneB1.lteNic.rlc.um sentPacketToUpperLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.droneB1.lteNic.rlc.um receivedPacketFromLowerLayer:count 0
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.droneB1.lteNic.rlc.um receivedPacketFromLowerLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.droneB1.lteNic.rlc.um receivedPacketFromUpperLayer:count 0
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.droneB1.lteNic.rlc.um receivedPacketFromUpperLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.droneB1.lteNic.rlc.am rlcPduPacketLossDl:mean -nan
+attr source rlcPduPacketLossDl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.rlc.am rlcPduPacketLossUl:mean -nan
+attr source rlcPduPacketLossUl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.rlc.am rlcPduThroughputUl:mean -nan
+attr source rlcPduThroughputUl
+attr title "Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.droneB1.lteNic.rlc.am rlcPduDelayUl:mean -nan
+attr source rlcPduDelayUl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.droneB1.lteNic.rlc.am rlcPduThroughputDl:mean -nan
+attr source rlcPduThroughputDl
+attr title "Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.droneB1.lteNic.rlc.am rlcPduDelayDl:mean -nan
+attr source rlcPduDelayDl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.droneB1.lteNic.rlc.am rlcCellPacketLossUl:mean -nan
+attr source rlcCellPacketLossUl
+attr title "rlc Cell Packet Loss, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.rlc.am rlcCellPacketLossDl:mean -nan
+attr source rlcCellPacketLossDl
+attr title "rlc Cell Packet Loss, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.rlc.am rlcCellThroughputDl:mean -nan
+attr source rlcCellThroughputDl
+attr title "Cell Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.droneB1.lteNic.rlc.am rlcCellThroughputUl:mean -nan
+attr source rlcCellThroughputUl
+attr title "Cell Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.droneB1.lteNic.rlc.am rlcPacketLossTotal:mean -nan
+attr source rlcPacketLossTotal
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.rlc.am rlcPacketLossDl:mean -nan
+attr source rlcPacketLossDl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.rlc.am rlcPacketLossUl:mean -nan
+attr source rlcPacketLossUl
+attr title "rlc Packet Loss, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.rlc.am rlcThroughputUl:mean -nan
+attr source rlcThroughputUl
+attr title "Throughput at the rlc layer UL, mean"
+attr unit Bps
+scalar Highway2.droneB1.lteNic.rlc.am rlcDelayUl:mean -nan
+attr source rlcDelayUl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.droneB1.lteNic.rlc.am rlcThroughputDl:mean -nan
+attr source rlcThroughputDl
+attr title "Throughput at the rlc layer DL, mean"
+attr unit Bps
+scalar Highway2.droneB1.lteNic.rlc.am rlcDelayDl:mean -nan
+attr source rlcDelayDl
+attr title "Delay at the rlc layer UL, mean"
+attr unit s
+scalar Highway2.droneB1.lteNic.mac avgServedBlocksUl:mean 0
+attr source avgServedBlocksUl
+attr title "LTE Avg Served Blocks Ul, mean"
+attr unit blocks
+scalar Highway2.droneB1.lteNic.mac avgServedBlocksDl:mean 0
+attr source avgServedBlocksDl
+attr title "LTE Avg Served Blocks Dl, mean"
+attr unit blocks
+scalar Highway2.droneB1.lteNic.mac cellBlocksUtilizationUl:mean 0
+attr source cellBlocksUtilizationUl
+attr title "LTE Cell Blocks Utilization Ul, mean"
+attr unit blocks
+scalar Highway2.droneB1.lteNic.mac cellBlocksUtilizationDl:mean 0
+attr source cellBlocksUtilizationDl
+attr title "LTE Cell Blocks Utilization Dl, mean"
+attr unit blocks
+scalar Highway2.droneB1.lteNic.mac measuredItbs:mean -nan
+attr source measuredItbs
+attr title "TBS index, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.mac harqErrorRate_4th_Dl:mean -nan
+attr source harqErrorRate_4th_Dl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.mac harqErrorRate_4th_Ul:mean -nan
+attr source harqErrorRate_4th_Ul
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.mac harqErrorRate_3rd_Dl:mean -nan
+attr source harqErrorRate_3rd_Dl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.mac harqErrorRate_3rd_Ul:mean -nan
+attr source harqErrorRate_3rd_Ul
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.mac harqErrorRate_2nd_Dl:mean -nan
+attr source harqErrorRate_2nd_Dl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.mac harqErrorRate_2nd_Ul:mean -nan
+attr source harqErrorRate_2nd_Ul
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.mac harqErrorRate_1st_Dl:mean -nan
+attr source harqErrorRate_1st_Dl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.mac harqErrorRate_1st_Ul:mean -nan
+attr source harqErrorRate_1st_Ul
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.mac harqErrorRateDl:mean -nan
+attr source harqErrorRateDl
+attr title "Harq Error Rate Dl, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.mac harqErrorRateUl:mean -nan
+attr source harqErrorRateUl
+attr title "Harq Error Rate Ul, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.mac macBufferOverFlowD2D:mean -nan
+attr source macBufferOverFlowD2D
+attr title "Mac buffer overflow as function of time, mean"
+attr unit Byte/s
+scalar Highway2.droneB1.lteNic.mac macBufferOverFlowUl:mean -nan
+attr source macBufferOverFlowUl
+attr title "Mac buffer overflow as function of time, mean"
+attr unit Byte/s
+scalar Highway2.droneB1.lteNic.mac macBufferOverFlowDl:mean -nan
+attr source macBufferOverFlowDl
+attr title "Mac buffer overflow as function of time, mean"
+attr unit Byte/s
+scalar Highway2.droneB1.lteNic.mac macPacketLossDl:mean -nan
+attr source macPacketLossDl
+attr title "Mac Packet Loss Dl, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.mac macPacketLossUl:mean -nan
+attr source macPacketLossUl
+attr title "Mac Packet Loss Ul, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.mac macCellPacketLossUl:mean -nan
+attr source macCellPacketLossUl
+attr title "Mac Cell Packet Loss Ul, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.mac macCellPacketLossDl:mean -nan
+attr source macCellPacketLossDl
+attr title "Mac Cell Packet Loss Dl, mean"
+attr unit ""
+scalar Highway2.droneB1.lteNic.mac macCellThroughputDl:mean -nan
+attr source macCellThroughputDl
+attr title "Cell Throughput at the MAC layer DL, mean"
+attr unit Bps
+scalar Highway2.droneB1.lteNic.mac macCellThroughputUl:mean -nan
+attr source macCellThroughputUl
+attr title "Cell Throughput at the MAC layer UL, mean"
+attr unit Bps
+scalar Highway2.droneB1.lteNic.mac macThroughputUl:mean -nan
+attr source macThroughputUl
+attr title "Throughput at the MAC layer UL, mean"
+attr unit Bps
+scalar Highway2.droneB1.lteNic.mac macDelayUl:mean -nan
+attr source macDelayUl
+attr title "Delay at the MAC layer UL, mean"
+attr unit s
+scalar Highway2.droneB1.lteNic.mac macThroughputDl:mean -nan
+attr source macThroughputDl
+attr title "Throughput at the MAC layer DL, mean"
+attr unit Bps
+scalar Highway2.droneB1.lteNic.mac macDelayDl:mean -nan
+attr source macDelayDl
+attr title "Delay at the MAC layer UL, mean"
+attr unit s
+scalar Highway2.droneB1.lteNic.mac sentPacketToLowerLayer:count 0
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.droneB1.lteNic.mac sentPacketToLowerLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPacketToLowerLayer
+scalar Highway2.droneB1.lteNic.mac sentPacketToUpperLayer:count 0
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.droneB1.lteNic.mac sentPacketToUpperLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPacketToUpperLayer
+scalar Highway2.droneB1.lteNic.mac receivedPacketFromLowerLayer:count 0
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.droneB1.lteNic.mac receivedPacketFromLowerLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source receivedPacketFromLowerLayer
+scalar Highway2.droneB1.lteNic.mac receivedPacketFromUpperLayer:count 0
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.droneB1.lteNic.mac receivedPacketFromUpperLayer:sum(packetBytes) 0
+attr interpolationmode none
+attr source receivedPacketFromUpperLayer
+scalar Highway2.droneB1.lteNic.channelModel rcvdSinr:mean -nan
+attr source rcvdSinr
+attr title "SINR measured at packet reception, mean"
+attr unit dB
+statistic Highway2.droneB1.pppIf.queue queueingTime:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar Highway2.droneB1.pppIf.queue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar Highway2.droneB1.pppIf.queue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar Highway2.droneB1.pppIf.queue queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar Highway2.droneB1.pppIf.queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar Highway2.droneB1.pppIf.queue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar Highway2.droneB1.pppIf.queue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar Highway2.droneB1.pppIf.ppp txState:timeavg 0
+attr interpolationmode sample-hold
+attr title "tx state, timeavg"
+scalar Highway2.droneB1.pppIf.ppp droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar Highway2.droneB1.pppIf.ppp droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar Highway2.droneB1.pppIf.ppp droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar Highway2.droneB1.pppIf.ppp droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar Highway2.droneB1.pppIf.ppp rxPkOk:count 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar Highway2.droneB1.pppIf.ppp rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar Highway2.droneB1.pppIf.ppp txPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar Highway2.droneB1.pppIf.ppp txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar Highway2.droneB1.pppIf.ppp rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Highway2.droneB1.pppIf.ppp rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Highway2.droneB1.pppIf.ppp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Highway2.droneB1.pppIf.ppp passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+statistic Highway2.droneB1.x2ppp[0].queue queueingTime:histogram
+field count 9
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	9
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Highway2.droneB1.x2ppp[0].queue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar Highway2.droneB1.x2ppp[0].queue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar Highway2.droneB1.x2ppp[0].queue queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar Highway2.droneB1.x2ppp[0].queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar Highway2.droneB1.x2ppp[0].queue rcvdPk:count 9
+attr interpolationmode none
+attr title "received packets, count"
+scalar Highway2.droneB1.x2ppp[0].queue rcvdPk:sum(packetBytes) 656
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar Highway2.droneB1.x2ppp[0].ppp txState:timeavg 7.19e-10
+attr interpolationmode sample-hold
+attr title "tx state, timeavg"
+scalar Highway2.droneB1.x2ppp[0].ppp droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar Highway2.droneB1.x2ppp[0].ppp droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar Highway2.droneB1.x2ppp[0].ppp droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar Highway2.droneB1.x2ppp[0].ppp droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar Highway2.droneB1.x2ppp[0].ppp rxPkOk:count 9
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar Highway2.droneB1.x2ppp[0].ppp rxPkOk:sum(packetBytes) 723
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar Highway2.droneB1.x2ppp[0].ppp txPk:count 9
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar Highway2.droneB1.x2ppp[0].ppp txPk:sum(packetBytes) 719
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar Highway2.droneB1.x2ppp[0].ppp rcvdPkFromHL:count 9
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Highway2.droneB1.x2ppp[0].ppp rcvdPkFromHL:sum(packetBytes) 656
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Highway2.droneB1.x2ppp[0].ppp passedUpPk:count 9
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Highway2.droneB1.x2ppp[0].ppp passedUpPk:sum(packetBytes) 660
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+statistic Highway2.droneB1.x2ppp[1].queue queueingTime:histogram
+field count 9
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	9
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Highway2.droneB1.x2ppp[1].queue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar Highway2.droneB1.x2ppp[1].queue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar Highway2.droneB1.x2ppp[1].queue queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar Highway2.droneB1.x2ppp[1].queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar Highway2.droneB1.x2ppp[1].queue rcvdPk:count 9
+attr interpolationmode none
+attr title "received packets, count"
+scalar Highway2.droneB1.x2ppp[1].queue rcvdPk:sum(packetBytes) 656
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar Highway2.droneB1.x2ppp[1].ppp txState:timeavg 7.19e-10
+attr interpolationmode sample-hold
+attr title "tx state, timeavg"
+scalar Highway2.droneB1.x2ppp[1].ppp droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar Highway2.droneB1.x2ppp[1].ppp droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar Highway2.droneB1.x2ppp[1].ppp droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar Highway2.droneB1.x2ppp[1].ppp droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar Highway2.droneB1.x2ppp[1].ppp rxPkOk:count 9
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar Highway2.droneB1.x2ppp[1].ppp rxPkOk:sum(packetBytes) 723
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar Highway2.droneB1.x2ppp[1].ppp txPk:count 9
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar Highway2.droneB1.x2ppp[1].ppp txPk:sum(packetBytes) 719
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar Highway2.droneB1.x2ppp[1].ppp rcvdPkFromHL:count 9
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Highway2.droneB1.x2ppp[1].ppp rcvdPkFromHL:sum(packetBytes) 656
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Highway2.droneB1.x2ppp[1].ppp passedUpPk:count 9
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Highway2.droneB1.x2ppp[1].ppp passedUpPk:sum(packetBytes) 660
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar Highway2.droneB1.networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar Highway2.droneB1.networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar Highway2.droneB1.networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar Highway2.droneB1.networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar Highway2.droneB1.networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar Highway2.droneB1.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr title "packets dropped (checksum error), count"
+scalar Highway2.droneB1.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr title "packets dropped (wrong port), count"
+scalar Highway2.droneB1.udp passedUpPk:count 0
+attr interpolationmode none
+attr title "packets passed up, count"
+scalar Highway2.droneB1.udp rcvdPk:count 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, count"
+scalar Highway2.droneB1.udp rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, sum(packetBytes)"
+scalar Highway2.droneB1.udp sentPk:count 0
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, count"
+scalar Highway2.droneB1.udp sentPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, sum(packetBytes)"
+scalar Highway2.droneB1.x2App[0].client echoedPk:count 0
+attr interpolationmode none
+attr source echoedPk
+attr title "packets echoed, count"
+scalar Highway2.droneB1.x2App[0].client echoedPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source echoedPk
+attr title "packets echoed, sum(packetBytes)"
+scalar Highway2.droneB1.x2App[0].client rcvdPk:count 5
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, count"
+scalar Highway2.droneB1.x2App[0].client rcvdPk:sum(packetBytes) 10
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, sum(packetBytes)"
+scalar Highway2.droneB1.x2App[0].client sentPk:count 0
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, count"
+scalar Highway2.droneB1.x2App[0].client sentPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, sum(packetBytes)"
+scalar Highway2.droneB1.x2App[0].server "bytes rcvd" 0
+scalar Highway2.droneB1.x2App[0].server throughput -nan
+scalar Highway2.droneB1.x2App[1].client echoedPk:count 0
+attr interpolationmode none
+attr source echoedPk
+attr title "packets echoed, count"
+scalar Highway2.droneB1.x2App[1].client echoedPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source echoedPk
+attr title "packets echoed, sum(packetBytes)"
+scalar Highway2.droneB1.x2App[1].client rcvdPk:count 5
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, count"
+scalar Highway2.droneB1.x2App[1].client rcvdPk:sum(packetBytes) 10
+attr interpolationmode none
+attr source rcvdPk
+attr title "packets received, sum(packetBytes)"
+scalar Highway2.droneB1.x2App[1].client sentPk:count 0
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, count"
+scalar Highway2.droneB1.x2App[1].client sentPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source sentPk
+attr title "packets sent, sum(packetBytes)"
+scalar Highway2.droneB1.x2App[1].server "bytes rcvd" 0
+scalar Highway2.droneB1.x2App[1].server throughput -nan
+
