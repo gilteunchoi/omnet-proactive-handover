@@ -1,4 +1,4 @@
-11:52:12 **** Incremental Build of configuration gcc-release for project inet ****
+17:21:49 **** Incremental Build of configuration gcc-release for project inet ****
 make MODE=release -j4 all 
 cd src && make
 make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
@@ -30,5 +30,5 @@ Building...
 make[1]: Nothing to be done for 'all-pch'.
 make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/inet-3.6.6/src'
 
-11:52:13 Build Finished (took 1s.114ms)
+17:21:50 Build Finished (took 1s.123ms)
 

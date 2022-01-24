@@ -14,10 +14,18 @@
 #include "stack/phy/feedback/LteDlFeedbackGenerator.h"
 
 
-//// gilteun
-//#include <fstream>
-//#include <iostream>
-//// end - gilteun
+// gilteun
+#include <fstream>
+#include <iostream>
+
+static double g_priorRSSI[2048][10] {0,};
+static double g_kalmanGain[2048][10] {0,};
+static double g_priorErrorCovarianceRSSI[2048][10] {0,};
+static int g_isInitialized[2048][10] {0,};
+
+static double g_processNoise = 0.0005;
+static double g_measurementNoise = 20;
+// end - gilteun
 
 Define_Module(LtePhyUe);
 
@@ -224,15 +232,24 @@ void LtePhyUe::handoverHandler(LteAirFrame* frame, UserControlInfo* lteInfo)
         rssi /= rssiV.size();
     }
 
+    //*******
     //gilteun
+    //*******
+
+    //
+    //log
+    //
     //std::cout << "UE " << nodeId_ << " broadcast frame from " << lteInfo->getSourceId() << " with RSSI: " << rssi << " at " << simTime().str() << endl;
+    //std::cout << g_priorRSSI[nodeId_-1000][lteInfo->getSourceId()-1] << " " << (nodeId_-1000) << " "<< (lteInfo->getSourceId()-1) << endl;
 
-    char rawFileName[256];
-    sprintf(rawFileName, "./data/001/UE_%d.raw.csv", nodeId_);
-
+    //
+    //save raw rssi data
+    //
+    char rawFile[256];
+    sprintf(rawFile, "./data/001/UE_%d.raw.csv", nodeId_);
     std::ofstream rawRSSI;
-    rawRSSI.open(rawFileName, std::ios::app);
-    //std::cout << rawFileName << " is created" << endl;
+    rawRSSI.open(rawFile, std::ios::app);
+    //std::cout << rawFile << " is created" << endl;
     if(rawRSSI.is_open()){
         if(lteInfo->getSourceId() == 1){
             rawRSSI << simTime().str() << "," << rssi << ",";
@@ -244,7 +261,92 @@ void LtePhyUe::handoverHandler(LteAirFrame* frame, UserControlInfo* lteInfo)
     }
     rawRSSI.close();
 
+    //
+    // kalman filtering
+    //
+    double priorRSSI = 0.0;
+    double kalmanGain = 0.0;
+    double priorErrorCovarianceRSSI = 0.0;
+
+    if(g_isInitialized[nodeId_-1000][lteInfo->getSourceId()-1] == 0){
+        priorRSSI = rssi;
+        priorErrorCovarianceRSSI = 1;
+        g_isInitialized[nodeId_-1000][lteInfo->getSourceId()-1] = 1;
+    } else {
+        priorRSSI = g_priorRSSI[nodeId_-1000][lteInfo->getSourceId()-1];
+        priorErrorCovarianceRSSI = g_priorErrorCovarianceRSSI[nodeId_-1000][lteInfo->getSourceId()-1] + g_processNoise;
+    }
+
+    kalmanGain = priorErrorCovarianceRSSI / (priorErrorCovarianceRSSI + g_measurementNoise);
+    g_priorRSSI[nodeId_-1000][lteInfo->getSourceId()-1] = priorRSSI + (kalmanGain * (rssi - priorRSSI));
+    g_priorErrorCovarianceRSSI[nodeId_-1000][lteInfo->getSourceId()-1] = (1 - kalmanGain) * priorErrorCovarianceRSSI;
+
+    //
+    //save kalman filtered rssi data
+    //
+    char kalmanFile[256];
+    sprintf(kalmanFile, "./data/001/UE_%d.kf.csv", nodeId_);
+    std::ofstream kalmanFilter;
+    kalmanFilter.open(kalmanFile, std::ios::app);
+    if(kalmanFilter.is_open()){
+        if(lteInfo->getSourceId() == 1){
+            kalmanFilter << simTime().str() << "," << g_priorRSSI[nodeId_-1000][lteInfo->getSourceId()-1] << ",";
+        }else if(lteInfo->getSourceId() == 10){
+            kalmanFilter << rssi << endl;
+        }else{
+            kalmanFilter << rssi << ",";
+        }
+    }
+    kalmanFilter.close();
+
+//    //read kalman filter cache data
+//    char kalmanCacheFile[256];
+//    double priorRSSI[10] {0,};
+//    double kalmanGain[10] {0,};
+//    double priorErrorCovarianceRSSI[10] {0,};
+//    sprintf(kalmanCacheFile, "./data/001/UE_%d.KFC.csv", nodeId_);
+//    std::ifstream kalmanCache(kalmanCacheFile, std::ios::in);
+//    if(kalmanCache.fail()){
+//        //file not exist == not initialized
+//        for(int i = 0; i < 10; i++){
+//            priorRSSI[i] = 0.0;
+//            kalmanGain[i] = 0.0;
+//            priorErrorCovarianceRSSI[i] = 0.0;
+//        }
+//    } else {
+//        //file exist == initialized
+//        if(kalmanCache.is_open()){
+//            for(int i = 0; i < 10; i++){
+//                char buffer[256];
+//                priorRSSI[i] = std::stod(getline(kalmanCache, buffer));
+//                kalmanGain[i] = std::stod(getline(kalmanCache, buffer));
+//                priorErrorCovarianceRSSI[i] = std::stod(getline(kalmanCache, buffer));
+//                std::cout << "priR" << priorRSSI[i] << endl;
+//                std::cout << "priR" << kalmanGain[i] << endl;
+//                std::cout << "priR" << priorErrorCovarianceRSSI[i] << endl;
+//            }
+//            kalmanCache.close();
+//        }
+//    }
+//
+//
+//    std::ofstream kalmanCacheFile;
+//    kalmanFilter.open(kalmanCacheFile, std::ios::trunc);
+//
+//    kalmanFilter.close();
+//
+//    //save kalman filtered data
+//    char kalmanFile[256];
+//    sprintf(kalmanFile, "./data/001/UE_%d.KF.csv", nodeId_);
+//    std::ofstream kalmanFilter;
+//    kalmanFilter.open(kalmanFile, std::ios::app);
+//
+//    kalmanFilter.close();
+
+    //***********
     //end gilteun
+    //***********
+
     EV << "UE " << nodeId_ << " broadcast frame from " << lteInfo->getSourceId() << " with RSSI: " << rssi << " at " << simTime().str() << endl;
 
     if (rssi > candidateMasterRssi_ + hysteresisTh_)
@@ -302,11 +404,11 @@ void LtePhyUe::triggerHandover()
     std::cout << "candidate rssi: " << candidateMasterRssi_ << endl;
     std::cout << "##########################" << endl;
 
-    char rawFileName[256];
-    sprintf(rawFileName, "./data/001/UE_%d.hot.csv", nodeId_);
+    char handOverTimeFile[256];
+    sprintf(handOverTimeFile, "./data/001/UE_%d.hot.csv", nodeId_);
 
     std::ofstream rawHOT;
-    rawHOT.open(rawFileName, std::ios::app);
+    rawHOT.open(handOverTimeFile, std::ios::app);
     //std::cout << rawFileName << " is created" << endl;
     if(rawHOT.is_open()){
         rawHOT << simTime().str() << "," << masterId_<< "," << candidateMasterId_ << endl;
