@@ -348,7 +348,9 @@ void LtePhyUe::handoverHandler(LteAirFrame* frame, UserControlInfo* lteInfo)
     //***********
 
     EV << "UE " << nodeId_ << " broadcast frame from " << lteInfo->getSourceId() << " with RSSI: " << rssi << " at " << simTime().str() << endl;
-
+    //std::cout << "rssi " << rssi << endl;
+    //std::cout << "cmrs " << candidateMasterRssi_  << endl;
+    //std::cout << "hyst  " << hysteresisTh_ << endl;
     if (rssi > candidateMasterRssi_ + hysteresisTh_)
     {
         if (lteInfo->getSourceId() == masterId_)
