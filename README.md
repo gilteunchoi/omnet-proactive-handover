@@ -45,4 +45,4 @@ $ ./sumo-1.0.1/tools/randomTrips.py –n {pathname}.net.xml –o {tripname}.rou.
 
 ## For whom work after me
 Good Luck and Enjoy!<br>
-2022, Gilteun Choi
+2022, Jan, Gilteun Choi
