@@ -23,7 +23,7 @@ static double g_kalmanGain[2048][10] {0,};
 static double g_priorErrorCovarianceRSSI[2048][10] {0,};
 static int g_isInitialized[2048][10] {0,};
 
-static double g_processNoise = 0.0005;
+static double g_processNoise = 0.0050;
 static double g_measurementNoise = 20;
 // end - gilteun
 
@@ -251,13 +251,7 @@ void LtePhyUe::handoverHandler(LteAirFrame* frame, UserControlInfo* lteInfo)
     rawRSSI.open(rawFile, std::ios::app);
     //std::cout << rawFile << " is created" << endl;
     if(rawRSSI.is_open()){
-        if(lteInfo->getSourceId() == 1){
-            rawRSSI << simTime().str() << "," << rssi << ",";
-        }else if(lteInfo->getSourceId() == 10){
-            rawRSSI << rssi << endl;
-        }else{
-            rawRSSI << rssi << ",";
-        }
+        rawRSSI << simTime().str() << "," << rssi << "," << endl;
     }
     rawRSSI.close();
 

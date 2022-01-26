@@ -31,39 +31,39 @@ network Highway3
         double playgroundSizeX @unit(m); // x size of the area the nodes are in (in meters)
         double playgroundSizeY @unit(m); // y size of the area the nodes are in (in meters)
         double playgroundSizeZ @unit(m); // z size of the area the nodes are in (in meters)
-        @display("bgb=10000,4730.641");
+        @display("bgb=10000,3000");
 
     submodules:
 
         routingRecorder: RoutingTableRecorder {
-            @display("p=853.3125,238.65001;is=s");
+            @display("p=1000,2000;is=s");
         }
         configurator: IPv4NetworkConfigurator {
-            @display("p=380.17502,240.0375");
+            @display("p=800,2000");
             config = xmldoc("demo.xml");
         }
 
         //# Veins manager module
         veinsManager: VeinsInetManager {
-            @display("p=149.85,238.65001;is=s");
+            @display("p=600,2000;is=s");
         }
 
         //# LTE modules
         channelControl: LteChannelControl {
-            @display("p=1082.25,238.65001;is=s");
+            @display("p=200,2000;is=s");
         }
         binder: LteBinder {
-            @display("p=625.7625,240.0375;is=s");
+            @display("p=400,2000;is=s");
         }
         server: StandardHost {
-            @display("p=7705.5806,3738.9949;is=n;i=device/server");
+            @display("p=7000,2000;is=n;i=device/server");
         }
         router: Router {
-            @display("p=5624.7485,3722.7383;i=device/smallrouter");
+            @display("p=6000,2000;i=device/smallrouter");
         }
         pgw: PgwStandardSimplified {
             nodeType = "PGW";
-            @display("p=3235.0432,3462.6343;is=l");
+            @display("p=5000,2000;is=l");
         }
         //#A
         eNodeB1: eNodeB {

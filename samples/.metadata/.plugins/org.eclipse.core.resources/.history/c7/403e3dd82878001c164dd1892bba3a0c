@@ -1,8 +1,0 @@
-#include <stdio.h>
-#include <string.h>
-#include <omnetpp.h>
-
-class recodf : public cSimpleModule
-{
-
-};

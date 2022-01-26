@@ -2,36 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="hysteresisFactor_" key="selection"/>
+		<item value="hysteresisTh_" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="handoverStarter_"/>
+			<item value="hysteresisTh_"/>
+			<item value="updateHysteresisTh"/>
+			<item value="HANDOVERPKT"/>
+			<item value="broadcastMessageInterval"/>
+			<item value="bdcStarter"/>
+			<item value="createHandoverMessage"/>
+			<item value="handoverHandler"/>
+			<item value="gilteun"/>
+			<item value="delay"/>
+			<item value="triggerHandover"/>
 			<item value="hysteresisFactor_"/>
 			<item value="handoverStarter"/>
-			<item value="triggerHandover"/>
 			<item value="Name"/>
 			<item value="get"/>
-			<item value="lteInfo"/>
-			<item value="getSINR"/>
-			<item value="ID"/>
-			<item value="id"/>
-			<item value="TCPSinkApp"/>
-			<item value="delay"/>
-			<item value="macDelay"/>
-			<item value="macDelayt"/>
-			<item value="image"/>
 		</list>
 		<list key="replacehistory">
 			<item value="TCPSinkAppHO"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="348" key="DIALOG_WIDTH"/>
+		<item value="366" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="472" key="DIALOG_HEIGHT"/>
-		<item value="1613" key="DIALOG_X_ORIGIN"/>
-		<item value="32" key="DIALOG_Y_ORIGIN"/>
+		<item value="541" key="DIALOG_HEIGHT"/>
+		<item value="843" key="DIALOG_X_ORIGIN"/>
+		<item value="58" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
