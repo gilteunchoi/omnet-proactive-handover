@@ -5,6 +5,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/home/gilteun/omnetpp-5.4.1/inet-3.6.6"/>
 			<item value="/home/gilteun/Documents/inet-3.6.6"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">

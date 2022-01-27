@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2022년 01월 14일 (금) 오후 01시 21분 48초 by Eclipse SUMO netedit Version 1.0.1
+<!-- generated on 2022년 01월 27일 (목) 오전 11시 39분 38초 by Eclipse SUMO netedit Version 1.0.1
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
@@ -95,9 +95,9 @@
         <lane id="emain-wmain_0" index="0" speed="13.89" length="9991.38" shape="10015.69,-15.20 24.31,-15.20"/>
         <lane id="emain-wmain_1" index="1" speed="13.89" length="9991.38" shape="10015.69,-18.40 24.31,-18.40"/>
     </edge>
-    <edge id="eup-edown" from="eup" to="emain" priority="-1">
-        <lane id="eup-edown_0" index="0" speed="13.89" length="23.98" shape="10036.61,3.39 10019.65,-13.56"/>
-        <lane id="eup-edown_1" index="1" speed="13.89" length="23.98" shape="10038.87,1.13 10021.91,-15.82"/>
+    <edge id="eup-emain" from="eup" to="emain" priority="-1">
+        <lane id="eup-emain_0" index="0" speed="13.89" length="23.98" shape="10036.61,3.39 10019.65,-13.56"/>
+        <lane id="eup-emain_1" index="1" speed="13.89" length="23.98" shape="10038.87,1.13 10021.91,-15.82"/>
     </edge>
     <edge id="wdown-wmain" from="wdown" to="wmain" priority="-1">
         <lane id="wdown-wmain_0" index="0" speed="13.89" length="23.98" shape="3.39,-43.39 20.35,-26.44"/>
@@ -120,7 +120,7 @@
         <request index="0" response="00" foes="00" cont="0"/>
         <request index="1" response="00" foes="00" cont="0"/>
     </junction>
-    <junction id="emain" type="priority" x="10020.00" y="-20.00" incLanes="eup-edown_0 eup-edown_1 wmain-emain_0 wmain-emain_1" intLanes=":emain_0_0 :emain_1_0 :emain_2_0 :emain_3_0" shape="10018.52,-12.43 10023.05,-16.95 10021.69,-18.98 10021.52,-20.00 10021.69,-21.02 10022.20,-22.03 10023.05,-23.05 10018.52,-27.57 10017.65,-26.79 10017.27,-26.58 10016.87,-26.46 10016.36,-26.41 10015.69,-26.40 10015.69,-13.60 10016.87,-13.54 10017.27,-13.42 10017.65,-13.21 10018.04,-12.89">
+    <junction id="emain" type="priority" x="10020.00" y="-20.00" incLanes="eup-emain_0 eup-emain_1 wmain-emain_0 wmain-emain_1" intLanes=":emain_0_0 :emain_1_0 :emain_2_0 :emain_3_0" shape="10018.52,-12.43 10023.05,-16.95 10021.69,-18.98 10021.52,-20.00 10021.69,-21.02 10022.20,-22.03 10023.05,-23.05 10018.52,-27.57 10017.65,-26.79 10017.27,-26.58 10016.87,-26.46 10016.36,-26.41 10015.69,-26.40 10015.69,-13.60 10016.87,-13.54 10017.27,-13.42 10017.65,-13.21 10018.04,-12.89">
         <request index="0" response="0000" foes="0000" cont="0"/>
         <request index="1" response="0000" foes="0000" cont="0"/>
         <request index="2" response="0000" foes="0000" cont="0"/>
@@ -145,14 +145,14 @@
         <request index="1" response="00" foes="00" cont="0"/>
     </junction>
 
-    <connection from="edown-eup" to="eup-edown" fromLane="0" toLane="0" via=":eup_0_0" dir="l" state="M"/>
-    <connection from="edown-eup" to="eup-edown" fromLane="1" toLane="1" via=":eup_1_0" dir="l" state="M"/>
+    <connection from="edown-eup" to="eup-emain" fromLane="0" toLane="0" via=":eup_0_0" dir="l" state="M"/>
+    <connection from="edown-eup" to="eup-emain" fromLane="1" toLane="1" via=":eup_1_0" dir="l" state="M"/>
     <connection from="emain-edown" to="edown-eup" fromLane="0" toLane="0" via=":edown_0_0" dir="l" state="M"/>
     <connection from="emain-edown" to="edown-eup" fromLane="1" toLane="1" via=":edown_1_0" dir="l" state="M"/>
     <connection from="emain-wmain" to="wmain-wup" fromLane="0" toLane="0" via=":wmain_0_0" dir="r" state="M"/>
     <connection from="emain-wmain" to="wmain-wup" fromLane="1" toLane="1" via=":wmain_1_0" dir="r" state="M"/>
-    <connection from="eup-edown" to="emain-wmain" fromLane="0" toLane="0" via=":emain_0_0" dir="r" state="M"/>
-    <connection from="eup-edown" to="emain-wmain" fromLane="1" toLane="1" via=":emain_1_0" dir="r" state="M"/>
+    <connection from="eup-emain" to="emain-wmain" fromLane="0" toLane="0" via=":emain_0_0" dir="r" state="M"/>
+    <connection from="eup-emain" to="emain-wmain" fromLane="1" toLane="1" via=":emain_1_0" dir="r" state="M"/>
     <connection from="wdown-wmain" to="wmain-emain" fromLane="0" toLane="0" via=":wmain_2_0" dir="r" state="M"/>
     <connection from="wdown-wmain" to="wmain-emain" fromLane="1" toLane="1" via=":wmain_3_0" dir="r" state="M"/>
     <connection from="wmain-emain" to="emain-edown" fromLane="0" toLane="0" via=":emain_2_0" dir="r" state="M"/>
@@ -168,8 +168,8 @@
     <connection from=":emain_1" to="emain-wmain" fromLane="0" toLane="1" dir="r" state="M"/>
     <connection from=":emain_2" to="emain-edown" fromLane="0" toLane="0" dir="r" state="M"/>
     <connection from=":emain_3" to="emain-edown" fromLane="0" toLane="1" dir="r" state="M"/>
-    <connection from=":eup_0" to="eup-edown" fromLane="0" toLane="0" dir="l" state="M"/>
-    <connection from=":eup_1" to="eup-edown" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":eup_0" to="eup-emain" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":eup_1" to="eup-emain" fromLane="0" toLane="1" dir="l" state="M"/>
     <connection from=":wdown_0" to="wdown-wmain" fromLane="0" toLane="0" dir="l" state="M"/>
     <connection from=":wdown_1" to="wdown-wmain" fromLane="0" toLane="1" dir="l" state="M"/>
     <connection from=":wmain_0" to="wmain-wup" fromLane="0" toLane="0" dir="r" state="M"/>

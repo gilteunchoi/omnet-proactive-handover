@@ -1,7 +1,7 @@
 <configuration>
   <input>
     <net-file value="helloworld.net.xml"/>
-    <route-files value="trip3.rou.xml"/>
+    <route-files value="poissonTrip.rou.xml"/>
   </input>
   <time>
     <begin value="0"/>

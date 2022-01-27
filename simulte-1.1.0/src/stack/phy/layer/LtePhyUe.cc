@@ -250,8 +250,15 @@ void LtePhyUe::handoverHandler(LteAirFrame* frame, UserControlInfo* lteInfo)
     std::ofstream rawRSSI;
     rawRSSI.open(rawFile, std::ios::app);
     //std::cout << rawFile << " is created" << endl;
+
     if(rawRSSI.is_open()){
-        rawRSSI << simTime().str() << "," << rssi << "," << endl;
+        if(lteInfo->getSourceId() == 1){
+            rawRSSI << simTime().str() << "," << lteInfo->getSourceId() << "," << rssi << ",";
+        }else if(lteInfo->getSourceId() == 10){
+            rawRSSI << lteInfo->getSourceId() << "," << rssi << endl;
+        }else{
+            rawRSSI << lteInfo->getSourceId() << "," << rssi << ",";
+        }
     }
     rawRSSI.close();
 
@@ -284,11 +291,11 @@ void LtePhyUe::handoverHandler(LteAirFrame* frame, UserControlInfo* lteInfo)
     kalmanFilter.open(kalmanFile, std::ios::app);
     if(kalmanFilter.is_open()){
         if(lteInfo->getSourceId() == 1){
-            kalmanFilter << simTime().str() << "," << g_priorRSSI[nodeId_-1000][lteInfo->getSourceId()-1] << ",";
+            kalmanFilter << simTime().str() << "," << lteInfo->getSourceId() << "," << g_priorRSSI[nodeId_-1000][lteInfo->getSourceId()-1] << ",";
         }else if(lteInfo->getSourceId() == 10){
-            kalmanFilter << rssi << endl;
+            kalmanFilter <<  lteInfo->getSourceId() << "," << g_priorRSSI[nodeId_-1000][lteInfo->getSourceId()-1] << endl;
         }else{
-            kalmanFilter << rssi << ",";
+            kalmanFilter <<  lteInfo->getSourceId() << "," << g_priorRSSI[nodeId_-1000][lteInfo->getSourceId()-1] << ",";
         }
     }
     kalmanFilter.close();

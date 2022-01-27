@@ -1,8 +1,9 @@
-14:42:26 **** Incremental Build of configuration gcc-release for project lte ****
+16:51:33 **** Incremental Build of configuration gcc-release for project lte ****
 make MODE=release all 
 make[1]: Entering directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
-make[1]: Nothing to be done for 'all'.
+stack/phy/layer/LtePhyUe.cc
+Creating shared library: ../out/gcc-release/src/liblte.so
 make[1]: Leaving directory '/home/gilteun/omnetpp-5.4.1/simulte-1.1.0/src'
 
-14:42:26 Build Finished (took 523ms)
+16:51:37 Build Finished (took 4s.126ms)
 
