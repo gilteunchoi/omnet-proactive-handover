@@ -31,8 +31,8 @@ simple LteCellInfo {
         double positionUpdateInterval @unit(s) = default(0.001s);
           
         // broadcast messages interval (used for handover or das)
-        double broadcastMessageInterval @unit(s) = default(1s); //- original
-        //double broadcastMessageInterval @unit(s) = default(100ms);  //gilteun's setting
+        //double broadcastMessageInterval @unit(s) = default(1s); //- original
+        double broadcastMessageInterval @unit(s) = default(100ms);  //gilteun's setting
         
         
         // eNodeB type (MICRO / MACRO) - valid only for eNodeBs
