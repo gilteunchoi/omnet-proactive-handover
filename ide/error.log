@@ -1,19 +1,2 @@
-
-(soffice:8632): Gdk-WARNING **: gdk_window_set_icon_list: icons too large
-
-(soffice:8632): Gdk-WARNING **: gdk_window_set_icon_list: icons too large
-
-(soffice:8632): Gdk-WARNING **: gdk_window_set_icon_list: icons too large
-
-(soffice:8899): Gdk-WARNING **: gdk_window_set_icon_list: icons too large
-
-(soffice:8899): Gdk-WARNING **: gdk_window_set_icon_list: icons too large
-
-(soffice:8899): Gdk-WARNING **: gdk_window_set_icon_list: icons too large
-
-** (soffice:8899): WARNING **: Invalidate all children called
-
-
-(soffice:8899): Gdk-WARNING **: gdk_window_set_icon_list: icons too large
-
-(soffice:8899): Gdk-WARNING **: gdk_window_set_icon_list: icons too large
+log4j:WARN No appenders could be found for logger (org.eclipse.jgit.util.FS).
+log4j:WARN Please initialize the log4j system properly.

@@ -15,10 +15,8 @@
 <definedSymbol symbol="__cplusplus=199711L"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>
 <definedSymbol symbol="__GNUC__=5"/>
-<definedSymbol symbol="__GNUC_MINOR__=4"/>
 <definedSymbol symbol="__GNUC_MINOR__=5"/>
 <definedSymbol symbol="__GNUC_PATCHLEVEL__=0"/>
-<definedSymbol symbol="__VERSION__=&quot;5.4.0 20160609&quot;"/>
 <definedSymbol symbol="__VERSION__=&quot;5.5.0 20171010&quot;"/>
 <definedSymbol symbol="__ATOMIC_RELAXED=0"/>
 <definedSymbol symbol="__ATOMIC_SEQ_CST=5"/>
@@ -89,6 +87,7 @@
 <definedSymbol symbol="__cpp_rtti=199711"/>
 <definedSymbol symbol="__cpp_binary_literals=201304"/>
 <definedSymbol symbol="__cpp_runtime_arrays=198712"/>
+<definedSymbol symbol="__cpp_threadsafe_static_init=200806"/>
 <definedSymbol symbol="__EXCEPTIONS=1"/>
 <definedSymbol symbol="__cpp_exceptions=199711"/>
 <definedSymbol symbol="__GXX_ABI_VERSION=1009"/>
@@ -271,7 +270,6 @@
 <definedSymbol symbol="__STDC_IEC_559_COMPLEX__=1"/>
 <definedSymbol symbol="__STDC_ISO_10646__=201505L"/>
 <definedSymbol symbol="__STDC_NO_THREADS__=1"/>
-<definedSymbol symbol="__cpp_threadsafe_static_init=200806"/>
 </collector>
 </instance>
 <instance id="org.omnetpp.cdt.gnu.config.release.1746235823">
@@ -289,9 +287,9 @@
 <definedSymbol symbol="__cplusplus=199711L"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>
 <definedSymbol symbol="__GNUC__=5"/>
-<definedSymbol symbol="__GNUC_MINOR__=4"/>
+<definedSymbol symbol="__GNUC_MINOR__=5"/>
 <definedSymbol symbol="__GNUC_PATCHLEVEL__=0"/>
-<definedSymbol symbol="__VERSION__=&quot;5.4.0 20160609&quot;"/>
+<definedSymbol symbol="__VERSION__=&quot;5.5.0 20171010&quot;"/>
 <definedSymbol symbol="__ATOMIC_RELAXED=0"/>
 <definedSymbol symbol="__ATOMIC_SEQ_CST=5"/>
 <definedSymbol symbol="__ATOMIC_ACQUIRE=2"/>
@@ -361,6 +359,7 @@
 <definedSymbol symbol="__cpp_rtti=199711"/>
 <definedSymbol symbol="__cpp_binary_literals=201304"/>
 <definedSymbol symbol="__cpp_runtime_arrays=198712"/>
+<definedSymbol symbol="__cpp_threadsafe_static_init=200806"/>
 <definedSymbol symbol="__EXCEPTIONS=1"/>
 <definedSymbol symbol="__cpp_exceptions=199711"/>
 <definedSymbol symbol="__GXX_ABI_VERSION=1009"/>
